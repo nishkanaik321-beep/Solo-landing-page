@@ -1,0 +1,117 @@
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+}
+
+.header--solid {
+  background: rgba(255, 253, 251, 0.88);
+  backdrop-filter: blur(16px);
+  padding: 14px 0;
+  border-bottom-color: var(--line);
+  box-shadow: 0 4px 20px rgba(23, 19, 15, 0.04);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.header__nav a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.header__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.25s var(--ease-google-emphasized);
+}
+
+.header__nav a:hover {
+  color: var(--ink);
+}
+
+.header__nav a:hover::after {
+  width: 100%;
+}
+
+.header__cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.header__mobile {
+  overflow: hidden;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.header__mobile-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 22px 24px;
+}
+
+.header__mobile-inner a {
+  font-family: var(--font-display);
+  font-size: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.header__mobile-ctas {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.header__mobile-ctas .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .header__nav,
+  .header__cta {
+    display: none;
+  }
+  .header__toggle {
+    display: flex;
+  }
+}
+

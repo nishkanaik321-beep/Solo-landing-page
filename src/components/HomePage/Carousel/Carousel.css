@@ -1,0 +1,156 @@
+/* ==========================================================================
+   CAROUSEL — GOOGLE MATERIAL DESIGN 3 ANIMATIONS & CONTROLS
+   ========================================================================== */
+.carousel {
+  width: 100%;
+  outline: none;
+  position: relative;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  padding: 20px 6px 32px;
+}
+
+.carousel__drag-layer {
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.carousel__drag-layer:active {
+  cursor: grabbing;
+}
+
+.carousel__track {
+  display: flex;
+  will-change: transform;
+}
+
+.carousel__slide {
+  padding: 0 4px;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.carousel__slide-google-wrap {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  transition: box-shadow 0.4s var(--ease-google-emphasized);
+}
+
+/* Google Focal Card Elevation & Scaling */
+.carousel__slide--focal {
+  z-index: 2;
+}
+
+.carousel__slide--focal .entry-card {
+  box-shadow: var(--shadow-google-3) !important;
+  border-color: rgba(253, 67, 34, 0.35) !important;
+}
+
+.carousel__slide--side {
+  z-index: 1;
+}
+
+/* Google Dynamic Morphing Pill Pagination Indicators */
+.carousel__indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 6px 0 16px;
+}
+
+.carousel__pill {
+  height: 8px;
+  width: 8px;
+  border-radius: var(--radius-full);
+  background: rgba(23, 19, 15, 0.16);
+  padding: 0;
+  position: relative;
+  transition: width 0.4s var(--ease-google-emphasized),
+              background-color 0.3s ease,
+              transform 0.2s ease;
+  overflow: hidden;
+}
+
+.carousel__pill:hover {
+  background: rgba(23, 19, 15, 0.32);
+}
+
+.carousel__pill--active {
+  width: 28px;
+  background: var(--orange);
+  box-shadow: 0 2px 8px rgba(253, 67, 34, 0.4);
+}
+
+.carousel__pill-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+/* Google Material FAB Controls & Ripple Feedback */
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.carousel__arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-google-1);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease,
+              background 0.25s ease,
+              color 0.25s ease,
+              box-shadow 0.25s ease,
+              opacity 0.2s ease;
+}
+
+.carousel__arrow:hover:not(:disabled) {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  box-shadow: var(--shadow-google-2);
+}
+
+.carousel__arrow:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.carousel__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  transition: background 0.2s ease;
+}
+
+.carousel__view-all:hover {
+  background: rgba(23, 19, 15, 0.05);
+}
+

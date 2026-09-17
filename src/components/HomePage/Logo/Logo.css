@@ -1,0 +1,17 @@
+/* ==========================================================================
+   LOGO
+   ========================================================================== */
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo__img {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo--sm .logo__img { height: 22px; }
+.logo--md .logo__img { height: 28px; }
+.logo--lg .logo__img { height: 38px; }

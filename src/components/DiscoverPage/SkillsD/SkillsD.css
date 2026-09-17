@@ -1,0 +1,120 @@
+.skills {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--peach) 100%);
+  padding: 96px 0;
+}
+
+.skills__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 16px 0 40px;
+  max-width: 460px;
+  color: var(--ink);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.skills__card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+}
+
+.skills__card--main {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills__card-heading {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.skills__card-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 420px;
+}
+
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.skills__tag {
+  border: 1px solid var(--line);
+  background: var(--paper-dim);
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 9px 16px;
+  border-radius: var(--radius-full);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.skills__tag:hover {
+  border-color: var(--orange);
+  color: var(--ink);
+}
+
+.skills__tag--active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.skills__side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skills__card--small {
+  padding: 26px;
+  flex: 1;
+}
+
+.skills__icon {
+  margin-bottom: 14px;
+}
+
+.skills__card-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills {
+    padding: 64px 0;
+  }
+
+  .skills__card {
+    padding: 22px;
+  }
+}

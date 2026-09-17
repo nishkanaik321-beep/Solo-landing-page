@@ -1,0 +1,397 @@
+/* ==========================================================================
+   SOLO — The Skills Infrastructure & Credentialing Platform
+   Global Stylesheet: design tokens, reset, shared keyframes, layout
+   primitives, and cross-component atoms (buttons, tags, eyebrow, etc).
+   Each section now owns its own CSS file alongside its .jsx — see
+   src/components/HomePage/<Section>/<Section>.css
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --orange: #FD4322;
+  --orange-dark: #D6350F;
+  --gold: #FF7F07;
+  --blue: #1255FF;
+  --coral: #EB5038;
+
+  /* Neutrals & Surfaces */
+  --ink: #17130F;
+  --ink-soft: rgba(23, 19, 15, 0.68);
+  --ink-faint: rgba(23, 19, 15, 0.42);
+  --paper: #FFFDFB;
+  --paper-dim: #FBF3EC;
+  --peach: #FDF1E6;
+  --peach-deep: #FAE6D4;
+  --line: rgba(23, 19, 15, 0.10);
+  --night: #17130F;
+  --night-2: #211A14;
+  --on-night: #FBF3EC;
+  --on-night-soft: rgba(251, 243, 236, 0.65);
+
+  /* Status Indicators */
+  --success: #1E9E5A;
+  --success-bg: #E4F6EC;
+  --pending: #FF7F07;
+  --pending-bg: #FFF1E0;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Geometry & Shadows */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-full: 9999px;
+  --shadow-soft: 0 20px 44px rgba(23, 19, 15, 0.08);
+  --shadow-card: 0 10px 26px rgba(23, 19, 15, 0.07);
+  --shadow-pop: 0 26px 60px rgba(23, 19, 15, 0.16);
+  --shadow-google-1: 0 2px 8px rgba(32, 33, 36, 0.08), 0 1px 3px rgba(32, 33, 36, 0.06);
+  --shadow-google-2: 0 8px 24px rgba(32, 33, 36, 0.12), 0 2px 6px rgba(32, 33, 36, 0.06);
+  --shadow-google-3: 0 16px 36px rgba(32, 33, 36, 0.16), 0 4px 12px rgba(32, 33, 36, 0.08);
+
+  /* Google Material 3 Motion Curves */
+  --ease-google-emphasized: cubic-bezier(0.2, 0.0, 0, 1.0);
+  --ease-google-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-google-accelerate: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --ease-standard: cubic-bezier(0.16, 0.8, 0.3, 1);
+}
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* ==========================================================================
+   GOOGLE & CUSTOM KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes googleRipple {
+  0% {
+    transform: scale(0);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes googleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes googlePulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(253, 67, 34, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(253, 67, 34, 0);
+  }
+}
+
+@keyframes shimmerSlide {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ==========================================================================
+   OPACITY & UTILITY CLASSES
+   ========================================================================== */
+.opacity-0 { opacity: 0 !important; }
+.opacity-15 { opacity: 0.15 !important; }
+.opacity-30 { opacity: 0.30 !important; }
+.opacity-50 { opacity: 0.50 !important; }
+.opacity-70 { opacity: 0.70 !important; }
+.opacity-85 { opacity: 0.85 !important; }
+.opacity-100 { opacity: 1 !important; }
+/* ==========================================================================
+   SHARED LAYOUT & CONTAINERS
+   ========================================================================== */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section--tight {
+  padding: 96px 0;
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 22px; }
+  .section { padding: 76px 0; }
+  .section--tight { padding: 64px 0; }
+}
+
+/* ==========================================================================
+   EYEBROW BADGE
+   ========================================================================== */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink-soft);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--orange);
+  transform: rotate(45deg);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.eyebrow--on-night {
+  color: var(--on-night-soft);
+}
+.eyebrow--on-night::before {
+  background: var(--gold);
+}
+
+/* ==========================================================================
+   BUTTONS (With Google Ripple & Tactile Feedback)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 14.5px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s var(--ease-google-emphasized),
+              box-shadow 0.28s var(--ease-google-emphasized),
+              background 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(253, 67, 34, 0.32);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--orange-dark);
+  box-shadow: 0 14px 28px rgba(253, 67, 34, 0.42);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+  background: rgba(23, 19, 15, 0.04);
+  transform: translateY(-2px);
+}
+
+.btn-outline-night {
+  border: 1.5px solid rgba(251, 243, 236, 0.3);
+  color: var(--on-night);
+}
+
+.btn-outline-night:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-outline {
+  background: #fff;
+  border: 1.5px solid var(--orange);
+  color: var(--orange);
+}
+
+.btn-outline:hover {
+  background: var(--orange);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 9px 16px;
+  font-size: 13px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   TAG PILLS & METADATA
+   ========================================================================== */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: var(--orange);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.tag--muted {
+  background: var(--peach-deep);
+  color: var(--ink-soft);
+}
+
+.tag--outline {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink-faint);
+}
+
+.tag--success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.tag--pending {
+  background: var(--pending-bg);
+  color: var(--pending);
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+
+.meta-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.meta-row svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Avatar & Logo Placeholders */
+.avatar-placeholder {
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.logo-placeholder {
+  border-radius: 12px;
+  background: var(--peach-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+

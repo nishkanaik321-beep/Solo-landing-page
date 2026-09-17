@@ -1,0 +1,108 @@
+/* ==========================================================================
+   WHAT IS SOLO
+   ========================================================================== */
+.what-is {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle dot-grid + soft radial wash so the section isn't flat paper */
+.what-is::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(rgba(23, 19, 15, 0.055) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 0%, #000 0%, transparent 100%);
+  mask-image: radial-gradient(70% 60% at 50% 0%, #000 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.what-is::after {
+  content: '';
+  position: absolute;
+  top: -12%;
+  right: -8%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 67, 34, 0.06) 0%, rgba(253, 67, 34, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.what-is > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.what-is__head {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+
+.what-is__head h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  margin: 16px 0 16px;
+}
+
+.what-is__head p {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.what-is__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.what-is__card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  padding: 32px 28px;
+  cursor: default;
+  transition: transform 0.3s var(--ease-google-emphasized), box-shadow 0.3s var(--ease-google-emphasized);
+}
+
+.what-is__card:hover {
+  box-shadow: var(--shadow-google-2);
+}
+
+.what-is__card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.what-is__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-is__corner {
+  color: var(--ink-faint);
+}
+
+.what-is__card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.what-is__card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .what-is__grid { grid-template-columns: 1fr; }
+}
+

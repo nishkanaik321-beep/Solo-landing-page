@@ -1,0 +1,100 @@
+/* ==========================================================================
+   PROJECT SPOTLIGHT
+   ========================================================================== */
+.project-spotlight__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.project-spotlight__copy h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  margin: 16px 0 14px;
+}
+
+.project-spotlight__copy p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 460px;
+}
+
+.project-spotlight__points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 22px;
+  list-style: none;
+  padding: 0;
+}
+
+.project-spotlight__points li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.project-spotlight__points svg {
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.project-spotlight__copy .btn {
+  margin-top: 24px;
+}
+
+.project-spotlight__stack {
+  position: relative;
+  max-width: 490px;
+  margin: 0 auto;
+  padding: 24px 20px 34px;
+}
+
+/* Stacked "cards behind" effect, echoing the reference layout */
+.project-spotlight__ghost {
+  position: absolute;
+  inset: 24px 20px 34px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--peach);
+}
+
+.project-spotlight__ghost--1 {
+  transform: translate(-10px, 14px) rotate(-3deg);
+  z-index: 0;
+}
+
+.project-spotlight__ghost--2 {
+  transform: translate(10px, 20px) rotate(3deg);
+  background: var(--peach-deep);
+  z-index: 0;
+}
+
+.project-spotlight__shot {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-google-3);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.project-spotlight__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .project-spotlight__grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .project-spotlight__copy p {
+    max-width: none;
+  }
+}

@@ -15,7 +15,16 @@ import Sign from './components/SignPage/Sign.jsx'
 import HeroD from './components/DiscoverPage/HeroD/HeroD.jsx'
 import SkillsD from './components/DiscoverPage/SkillsD/SkillsD.jsx'
 import CareerD from './components/DiscoverPage/CareerD/CareerD.jsx'
-import RolesD from './components/DiscoverPage/RolesD/RolesD.jsx'
+import OfferingsD from './components/DiscoverPage/OfferingsD/OfferingsD.jsx'
+import HeroB from './components/BuildPage/HeroB/HeroB.jsx'
+import AboutB from './components/BuildPage/AboutB/AboutB.jsx'
+import LiveProjectsB from './components/BuildPage/LiveProjectsB/LiveProjectsB.jsx'
+import ReviewB from './components/BuildPage/ReviewB/ReviewB.jsx'
+import HeroS from './components/ShowcasePage/HeroS/HeroS.jsx'
+import SourcesS from './components/ShowcasePage/SourcesS/SourcesS.jsx'
+import ProcessS from './components/ShowcasePage/ProcessS/ProcessS.jsx'
+import WalletS from './components/ShowcasePage/WalletS/WalletS.jsx'
+import UsefulnessS from './components/ShowcasePage/UsefulnessS/UsefulnessS.jsx'
 
 function LandingPage() {
   return (
@@ -45,8 +54,41 @@ function DiscoverPage() {
       <main>
         <HeroD />
         <SkillsD />
-        <RolesD />
         <CareerD />
+         <OfferingsD />
+      </main>
+      <FinalCTA />
+      <Footer />
+    </>
+  )
+}
+
+function BuildPage() {
+  return (
+    <>
+      <Header />
+      <main>
+        <HeroB />
+        <AboutB />
+        <LiveProjectsB />
+        <ReviewB /> 
+      </main>
+      <FinalCTA />
+      <Footer />
+    </>
+  )
+}
+
+function ShowcasePage() {
+  return (
+    <>
+      <Header />
+      <main>
+        <HeroS />
+        <SourcesS />
+        <ProcessS />
+        <WalletS />
+        <UsefulnessS />
       </main>
       <FinalCTA />
       <Footer />
@@ -60,6 +102,8 @@ export default function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/signin" element={<Sign />} />
       <Route path="/discover" element={<DiscoverPage />} />
+      <Route path="/build" element={<BuildPage />} />
+      <Route path="/showcase" element={<ShowcasePage />} />
     </Routes>
   )
 }

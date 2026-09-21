@@ -1,7 +1,37 @@
+/* ==========================================================================
+   SKILLS — supports a dark (default) and light theme, switchable at
+   runtime via the toggle in the section head. Same pattern as Journey on
+   the homepage and Hackathons on Build.
+   ========================================================================== */
 .skills {
-  background: linear-gradient(180deg, var(--paper) 0%, var(--peach) 100%);
   padding: 96px 0;
+  transition: background 0.4s ease, color 0.4s ease;
 }
+
+.skills--dark {
+  background: var(--night);
+  color: var(--on-night);
+}
+
+.skills--light {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--peach) 100%);
+  color: var(--ink);
+}
+
+.skills__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.skills__head {
+  max-width: 480px;
+}
+
+.skills--light .skills__eyebrow { color: var(--orange); }
+.skills--light .skills__eyebrow::before { background: var(--orange); }
 
 .skills__title {
   font-family: var(--font-display);
@@ -9,10 +39,12 @@
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.015em;
-  margin: 16px 0 40px;
-  max-width: 460px;
-  color: var(--ink);
+  margin: 16px 0 0;
+  transition: color 0.4s ease;
 }
+
+.skills--dark .skills__title { color: #fff; }
+.skills--light .skills__title { color: var(--ink); }
 
 .skills__grid {
   display: grid;
@@ -22,9 +54,18 @@
 }
 
 .skills__card {
-  background: #fff;
   border-radius: var(--radius-lg);
   padding: 30px;
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.skills--dark .skills__card {
+  background: var(--night-2);
+  border: 1px solid rgba(251, 243, 236, 0.1);
+}
+
+.skills--light .skills__card {
+  background: #fff;
   border: 1px solid var(--line);
   box-shadow: var(--shadow-card);
 }
@@ -40,16 +81,22 @@
   font-size: 19px;
   font-weight: 600;
   margin: 0 0 12px;
-  color: var(--ink);
+  transition: color 0.4s ease;
 }
+
+.skills--dark .skills__card-heading { color: #fff; }
+.skills--light .skills__card-heading { color: var(--ink); }
 
 .skills__card-text {
   font-size: 14px;
   line-height: 1.7;
-  color: var(--ink-soft);
   margin: 0;
   max-width: 420px;
+  transition: color 0.4s ease;
 }
+
+.skills--dark .skills__card-text { color: var(--on-night-soft); }
+.skills--light .skills__card-text { color: var(--ink-soft); }
 
 .skills__tags {
   display: flex;
@@ -59,9 +106,7 @@
 }
 
 .skills__tag {
-  border: 1px solid var(--line);
-  background: var(--paper-dim);
-  color: var(--ink-soft);
+  border: 1px solid transparent;
   font-size: 12.5px;
   font-weight: 500;
   padding: 9px 16px;
@@ -69,15 +114,25 @@
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.skills__tag:hover {
-  border-color: var(--orange);
-  color: var(--ink);
+.skills--dark .skills__tag {
+  background: rgba(251, 243, 236, 0.08);
+  border-color: rgba(251, 243, 236, 0.14);
+  color: var(--on-night-soft);
 }
 
+.skills--light .skills__tag {
+  background: var(--paper-dim);
+  border-color: var(--line);
+  color: var(--ink-soft);
+}
+
+.skills--dark .skills__tag:hover { border-color: var(--gold); color: #fff; }
+.skills--light .skills__tag:hover { border-color: var(--orange); color: var(--ink); }
+
 .skills__tag--active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff;
+  background: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
 }
 
 .skills__side {
@@ -92,16 +147,28 @@
 }
 
 .skills__icon {
-  margin-bottom: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
 }
+
+.skills--dark .skills__icon { background: rgba(251, 243, 236, 0.08); }
+.skills--light .skills__icon { background: var(--paper-dim); }
 
 .skills__card-title {
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: 600;
   margin: 0 0 8px;
-  color: var(--ink);
+  transition: color 0.4s ease;
 }
+
+.skills--dark .skills__card-title { color: #fff; }
+.skills--light .skills__card-title { color: var(--ink); }
 
 @media (max-width: 860px) {
   .skills__grid {
@@ -112,6 +179,10 @@
 @media (max-width: 640px) {
   .skills {
     padding: 64px 0;
+  }
+
+  .skills__head-row {
+    flex-direction: column;
   }
 
   .skills__card {

@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import './CareerD.css';
+import { motion } from 'framer-motion';
 
 const FILTERS = ['All', 'Design', 'Tech', 'Business', 'Marketing'];
+
+const fadeUp = (delay = 0) => ({
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { delay, duration: 0.55, ease: [0.16, 0.8, 0.3, 1] } },
+});
 
 // Pulled from the SPARK+ pathway screenshots. Three generic
 // "career readiness" pathways (Crack Your First Job, Career Success
@@ -202,18 +208,38 @@ function CareerD() {
   };
 
   return (
-    <section className="pathway">
+    <section className="pathway" id="pathways">
       <div className="container">
-        <p className="eyebrow">LEARNING PATHWAYS</p>
-        <h2 className="pathway__title">
+        <motion.p
+          className="eyebrow"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.6 }}
+          variants={fadeUp(0)}
+        >
+          LEARNING PATHWAYS
+        </motion.p>
+        <motion.h2
+          className="pathway__title"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeUp(0.06)}
+        >
           Pick a pathway,
           <br />
           not a pile of courses.
-        </h2>
-        <p className="pathway__subtitle">
+        </motion.h2>
+        <motion.p
+          className="pathway__subtitle"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeUp(0.12)}
+        >
           Each pathway strings the right skills together in the right order,
           built around a real role.
-        </p>
+        </motion.p>
 
         <div className="pathway__filters">
           {FILTERS.map((filter) => (

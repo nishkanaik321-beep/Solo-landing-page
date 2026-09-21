@@ -5,9 +5,8 @@
 
 export const navLinks = [
   { label: 'Discover', href: '/discover' },
-  { label: 'Learn', href: '#' },
-  { label: 'Build', href: '#' },
-  { label: 'Showcase', href: '#' },
+  { label: 'Build', href: '/build' },
+  { label: 'Showcase', href: '/showcase' },
 ]
 
 export const heroStats = [
@@ -36,12 +35,12 @@ export const trustStripItems = [
 export const whatIsSoloCards = [
   {
     title: 'Learn with Structured Pathways',
-    desc: 'Follow step-by-step role pathways curated with partners like ScholarHat and IBM SkillsBuild. Track progress as modules turn into earned badges.',
+    desc: 'Follow step-by-step role pathways curated with partners like IBM SkillsBuild. Track progress as modules turn into earned badges.',
     accent: 'var(--orange)',
     bg: 'linear-gradient(160deg, #FFF0EA, #FDF1E6)',
   },
   {
-    title: 'Prove It with Verifiable CLR Badges',
+    title: 'Prove It with Verifiable Credential Badges',
     desc: 'Turn course completions, live projects, and internships into tamper-proof credentials stored securely in your SOLO Credential Wallet.',
     accent: 'var(--gold)',
     bg: 'linear-gradient(160deg, #FFF3E6, #FDF1E6)',
@@ -75,7 +74,7 @@ export const journeyStages = [
   },
   {
     title: 'Learn & Practice',
-    desc: 'Follow structured modules across internal SOLO courses and recognized partner platforms such as IBM SkillsBuild, ScholarHat, and Skill India.',
+    desc: 'Follow structured modules across internal SOLO courses and recognized partner platforms such as IBM SkillsBuild.',
     items: [
       'Engage with self-paced lessons, interactive assignments, and quizzes',
       'Seamless synchronization between SOLO and external partner portals',
@@ -102,7 +101,7 @@ export const journeyStages = [
   },
   {
     title: 'Match & Apply',
-    desc: 'Use Skill Match Analysis to compare your verified credentials with real job vacancies, identify any missing gaps, and generate ATS-ready resumes.',
+    desc: 'Use Skill Match Analysis to compare your verified credentials with real job vacancies and identify any missing gaps.',
     items: [
       'View Matched, Partially Matched, and Missing skills for any job opening',
       'Generate professional resumes with clickable credential verification links',
@@ -113,34 +112,34 @@ export const journeyStages = [
 
 export const discoverPathCards = [
   {
-    title: 'Resume Import',
+    title: 'Learning',
     icon: 'layers',
-    desc: 'Upload your existing resume and SOLO auto-fills your profile, extracting verified skills in seconds.',
+    desc: 'Personalized learning opportunities that fit your pace.',
   },
   {
-    title: 'Career Pathways',
+    title: 'Skill development',
     icon: 'compass',
-    desc: 'Follow structured, industry-aligned pathways and see exactly which skills separate you from the role you want.',
+    desc: 'Practical, industry-relevant skills you can put to work.',
   },
   {
-    title: 'Skill Gap Analysis',
+    title: 'Live projects',
     icon: 'target',
-    desc: 'Compare your profile against real job requirements to see what\u2019s matched, missing, and worth learning next.',
-  },
-  {
-    title: 'Credential Wallet',
-    icon: 'user-circle',
-    desc: 'Store every badge, certificate, and CLR credential in one secure wallet that you fully own and control.',
-  },
-  {
-    title: 'Live Projects',
-    icon: 'briefcase',
     desc: 'Apply what you\u2019re learning to real briefs from real organizations, then turn the outcome into portfolio proof.',
   },
   {
-    title: 'ATS Resume Builder',
+    title: 'Career opportunities',
+    icon: 'briefcase',
+    desc: 'Discover internships, jobs, and meaningful projects.',
+  },
+  {
+    title: 'Profile',
+    icon: 'user-circle',
+    desc: 'Build a professional learner profile that evolves over time.',
+  },
+  {
+    title: 'Career growth',
     icon: 'trending-up',
-    desc: 'Generate a polished, ATS-ready resume in seconds, with clickable links recruiters can verify instantly.',
+    desc: 'Keep improving, connecting, and progressing.',
   },
 ]
 

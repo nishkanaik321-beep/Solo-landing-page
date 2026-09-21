@@ -6,7 +6,8 @@ import { journeyStages } from '../../../data/content.js'
 
 export default function Journey() {
   const [active, setActive] = useState(0)
-  const [isLight, setIsLight] = useState(false)
+  const [isLight, setIsLight] = useState(true
+  )
   const progressPct = ((active + 1) / journeyStages.length) * 100
   const stage = journeyStages[active]
 

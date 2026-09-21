@@ -22,9 +22,9 @@ export default function Header() {
   return (
     <header className={`header ${scrolled ? 'header--solid' : ''}`}>
       <div className="container header__inner">
-        <a href="#top" className="header__logo">
+        <Link to="/" className="header__logo">
           <Logo />
-        </a>
+        </Link>
 
         <nav className="header__nav">
           {navLinks.map((link) => (

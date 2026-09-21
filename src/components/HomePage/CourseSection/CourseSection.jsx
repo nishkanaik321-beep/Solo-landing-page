@@ -4,7 +4,7 @@ import Carousel from '../Carousel/Carousel.jsx'
 import EntryCard from '../EntryCard/EntryCard.jsx'
 import { courses } from '../../../data/content.js'
 
-const learningFormats = ['Course Catalog', 'Live Projects', 'Career Pathways', 'Experiential Learning']
+const learningFormats = ['Course Catalog', 'Opportunities', 'Career Pathways', 'Experiential Learning']
 
 export default function CourseSection() {
   return (
@@ -20,9 +20,7 @@ export default function CourseSection() {
           <span className="eyebrow">Learn with purpose</span>
           <h2>Turn learning into real skills.</h2>
           <p>
-            Courses are the beginning. Access a comprehensive ecosystem spanning traditional
-            courses, hands-on live projects, experiential learning, and structured career
-            pathways — learn at your pace, practice with purpose, and keep your progress visible.
+            Courses are the beginning. Learn at your pace, practice with purpose, and keep your progress visible.
           </p>
           <ul className="course-section__formats">
             {learningFormats.map((f) => (

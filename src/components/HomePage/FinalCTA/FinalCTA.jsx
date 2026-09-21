@@ -53,9 +53,7 @@ export default function FinalCTA() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.25, ease: [0.2, 0.0, 0, 1.0] }}
           >
-            Every completed module can become a verified badge on your profile — upload your resume,
-            follow structured pathways with IBM and ScholarHat, and carry your achievements in your
-            SOLO Mobile Wallet.
+            Every completed module can become a verified badge on your profile.
           </motion.p>
 
           <motion.div
@@ -75,23 +73,7 @@ export default function FinalCTA() {
             </Link>
           </motion.div>
 
-          <motion.div
-            className="final-cta__badges"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.5, delay: 0.45, ease: [0.2, 0.0, 0, 1.0] }}
-          >
-            <span className="final-cta__badge-pill">
-              <ShieldCheck size={14} /> CLR &amp; Open Badges
-            </span>
-            <span className="final-cta__badge-pill">
-              <Smartphone size={14} /> Mobile Wallet on Google Play
-            </span>
-            <span className="final-cta__badge-pill">
-              <FileText size={14} /> ATS Resume Builder
-            </span>
-          </motion.div>
+
         </motion.div>
       </div>
     </section>

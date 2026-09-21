@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import './SkillsD.css';
+import { useState } from 'react'
+import './SkillsD.css'
+import { motion } from 'framer-motion'
+import { Target, CircleCheckBig } from 'lucide-react'
+import ThemeToggle from '../../shared/ThemeToggle/ThemeToggle.jsx'
 
 const SKILL_TAGS = [
   'All',
@@ -14,25 +17,55 @@ const SKILL_TAGS = [
   'Stakeholder Buy-in',
   'A/B Testing',
   'Copywriting',
-];
+]
+
+const fadeUp = (delay = 0) => ({
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { delay, duration: 0.55, ease: [0.16, 0.8, 0.3, 1] } },
+})
 
 function SkillsD() {
-  const [activeTag, setActiveTag] = useState('All');
+  const [activeTag, setActiveTag] = useState('All')
+   const [isLight, setIsLight] = useState(true)
 
   return (
-    <section className="skills">
+    <section className={`skills ${isLight ? 'skills--light' : 'skills--dark'}`}>
       <div className="container">
-        <p className="eyebrow">YOUR SKILLS, YOUR PATH</p>
-        <h2 className="skills__title">
-          Discover the Skills
-          <br />
-          Behind Your Dream Job
-        </h2>
+        <div className="skills__head-row">
+          <motion.div
+            className="skills__head"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, ease: [0.16, 0.8, 0.3, 1] }}
+          >
+            <span className={`eyebrow skills__eyebrow ${isLight ? '' : 'eyebrow--on-night'}`}>
+              YOUR SKILLS, YOUR PATH
+            </span>
+            <h2 className="skills__title">
+              Discover the skills
+              <br />
+              behind your dream job.
+            </h2>
+          </motion.div>
+
+          <ThemeToggle
+            isLight={isLight}
+            onToggle={() => setIsLight((v) => !v)}
+            sectionLabel="skills section"
+          />
+        </div>
 
         <div className="skills__grid">
-          <div className="skills__card skills__card--main">
+          <motion.div
+            className="skills__card skills__card--main"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeUp(0.16)}
+          >
             <h3 className="skills__card-heading">
-              See what&apos;s actually worth learning right now.
+              See what's actually worth learning right now.
             </h3>
             <p className="skills__card-text">
               SOLO tracks demand signals across thousands of postings so
@@ -53,66 +86,45 @@ function SkillsD() {
                 </button>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           <div className="skills__side">
-            <div className="skills__card skills__card--small">
-              <svg
-                className="skills__icon"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M3 17l6-6 4 4 8-8"
-                  stroke="var(--orange)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <motion.div
+              className="skills__card skills__card--small"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={fadeUp(0.24)}
+            >
+              <span className="skills__icon" style={{ color: 'var(--orange)' }}>
+                <Target size={20} strokeWidth={2} />
+              </span>
               <h4 className="skills__card-title">Discover skills for a role</h4>
               <p className="skills__card-text">
                 Pick any job title and see the exact skill breakdown behind it.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="skills__card skills__card--small">
-              <svg
-                className="skills__icon"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="9"
-                  stroke="var(--blue)"
-                  strokeWidth="2"
-                />
-                <path
-                  d="M8 12l2.5 2.5L16 9"
-                  stroke="var(--blue)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <motion.div
+              className="skills__card skills__card--small"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={fadeUp(0.32)}
+            >
+              <span className="skills__icon" style={{ color: 'var(--blue)' }}>
+                <CircleCheckBig size={20} strokeWidth={2} />
+              </span>
               <h4 className="skills__card-title">Rate your starting point</h4>
               <p className="skills__card-text">
                 A quick self-check maps what you already know onto a pathway.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default SkillsD;
+export default SkillsD

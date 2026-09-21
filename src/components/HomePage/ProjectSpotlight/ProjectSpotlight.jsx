@@ -13,7 +13,7 @@ export default function ProjectSpotlight() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: [0.16, 0.8, 0.3, 1] }}
         >
-          <span className="eyebrow">From skills to experience</span>
+          <span className="eyebrow">From skills to building</span>
           <h2>Put what you know into action.</h2>
           <p>
             Go beyond learning by applying your skills to real projects and challenges. Create

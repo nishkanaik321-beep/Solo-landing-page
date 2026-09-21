@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react'
 
 const STATS = [
   { value: '1,200+', label: 'Credentials issued' },
-  { value: '100%', label: 'Cryptographically signed' },
   { value: 'Open Badges', label: '& CLR aligned' },
 ]
 
@@ -41,11 +40,10 @@ function HeroS() {
           </motion.p>
 
           <motion.div className="hero-s__ctas" initial="hidden" animate="show" variants={fadeUp(0.24)}>
-            <a href="#wallet" className="btn btn-primary">
-              See the wallet
+            <a href="#process" className="btn btn-primary">
+              How credentials are earned
               <ArrowRight size={15} />
             </a>
-            <a href="#sources" className="btn btn-ghost">How credentials are earned</a>
           </motion.div>
 
           <motion.div className="hero-s__stats" initial="hidden" animate="show" variants={fadeUp(0.32)}>

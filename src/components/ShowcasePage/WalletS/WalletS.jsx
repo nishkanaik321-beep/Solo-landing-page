@@ -133,10 +133,7 @@ function WalletS() {
                 )
               })}
             </ul>
-            <p className="wallet-s__note">
-              Tap <strong>View Credential</strong> on any card and it opens
-              the full record, evidence links included.
-            </p>
+
           </div>
 
           <motion.div

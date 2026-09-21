@@ -52,7 +52,6 @@ function HeroD() {
               Explore pathways
               <ArrowRight size={15} />
             </a>
-            <a href="#offerings" className="btn btn-ghost">See what's here</a>
           </motion.div>
 
           <motion.div className="hero-d__stats" initial="hidden" animate="show" variants={fadeUp(0.32)}>

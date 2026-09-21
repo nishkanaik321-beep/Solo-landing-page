@@ -31,10 +31,7 @@ export default function OpportunitySection() {
               <li key={f}>{f}</li>
             ))}
           </ul>
-          <Link to="/signin" className="btn btn-primary btn-sm opportunity-section__cta">
-            Find opportunities
-            <ArrowUpRight size={15} />
-          </Link>
+
         </motion.div>
 
         <motion.div

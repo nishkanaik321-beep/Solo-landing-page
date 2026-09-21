@@ -18,11 +18,11 @@ export const heroStats = [
 // Floating decorative cards in the hero
 export const heroFloatingCards = [
   { id: 'jobs', kind: 'pill', icon: 'rocket', title: 'Jobs', subtitle: 'Launch', accent: 'var(--orange)', style: { top: '10%', left: '4%' } },
-  { id: 'skills', kind: 'pill', icon: 'sparkles', title: 'Skills', subtitle: 'Grow', accent: 'var(--blue)', style: { top: '14%', right: '2%' } },
-  { id: 'courses', kind: 'pill', icon: 'sparkle', title: 'Courses', subtitle: 'Explore', accent: 'var(--ink)', style: { top: '48%', right: '-2%' } },
+  { id: 'skills', kind: 'pill', icon: 'sparkles', title: 'Skills', subtitle: 'Grow', accent: 'var(--blue)', style: { top: '14%', right: '6%' } },
+  { id: 'courses', kind: 'pill', icon: 'sparkle', title: 'Courses', subtitle: 'Explore', accent: 'var(--ink)', style: { top: '48%', right: '2%' } },
   { id: 'certifications', kind: 'pill', icon: 'check', title: 'Certifications', subtitle: 'Prove', accent: 'var(--ink)', style: { bottom: '18%', right: '4%' } },
   { id: 'internships', kind: 'pill', icon: 'arrow-up-right', title: 'Internships', subtitle: 'Match', accent: 'var(--success)', style: { bottom: '8%', left: '6%' } },
-  { id: 'journey', kind: 'journey', eyebrow: 'Your journey', stageStart: '01', stageEnd: '04', title: 'From curious to career-ready.', style: { top: '38%', left: '-3%' } },
+  { id: 'journey', kind: 'journey', eyebrow: 'Your journey', stageStart: '01', stageEnd: '04', title: 'From curious to career-ready.', style: { top: '38%', left: '4%' } },
 ]
 
 export const trustStripItems = [
@@ -104,8 +104,8 @@ export const journeyStages = [
     imageAlt: 'SOLO credential earning and endorsement screen',
     desc: 'Upon verification, receive cryptographically signed digital badges and Comprehensive Learner Records (CLR) directly in your Credential Wallet.',
     items: [
-      'Access verified credentials via the SOLO Mobile App on Google Play',
-      'Request peer, faculty, and mentor endorsements with shareable links',
+      'Access verified credentials via the SOLO platform',
+      'Request completion after completing courses and mentor endorsements for earned skills',
       'Export verifiable badges to LinkedIn licenses and social feeds with 1 tap',
     ],
   },
@@ -306,19 +306,9 @@ export const footerColumns = [
   {
     title: 'Platform',
     links: [
-      { label: 'Discover Pathways', href: '#discover-path' },
-      { label: 'Learn with Partners', href: '#learn-purpose' },
-      { label: 'Live Projects', href: '#skills-to-experience' },
-      { label: 'Credential Wallet', href: '#showcase' },
-    ],
-  },
-  {
-    title: 'Ecosystem',
-    links: [
-      { label: 'For Learners', href: '#' },
-      { label: 'For Institutions', href: '#' },
-      { label: 'For Employers', href: '#' },
-      { label: 'Mobile Wallet App', href: '#' },
+      { label: 'Discover', href: '/discover' },
+      { label: 'Build', href: '/build' },
+      { label: 'Showcase', href: '/showcase' },
     ],
   },
   {

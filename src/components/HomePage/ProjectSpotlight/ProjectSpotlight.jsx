@@ -24,7 +24,7 @@ export default function ProjectSpotlight() {
             <li><CheckCircle2 size={15} /> Reviewed and approved by industry mentors</li>
             <li><CheckCircle2 size={15} /> Counts toward your verified Credential Wallet</li>
           </ul>
-          <a href="#showcase" className="btn btn-primary">Explore more</a>
+          <a href="/build#live-projects" className="btn btn-primary">Explore more</a>
         </motion.div>
 
         <motion.div

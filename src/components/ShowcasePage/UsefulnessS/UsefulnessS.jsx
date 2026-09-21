@@ -7,7 +7,7 @@ const REASONS = [
     icon: ShieldCheck,
     accent: 'var(--success)',
     title: 'It\u2019s actually verified',
-    desc: 'Every credential is cryptographically signed and tamper-proof \u2014 anyone can check it\u2019s real, not just take your word for it.',
+    desc: 'Every credential is tamper-proof, anyone can check it real, not just take your word for it.',
   },
   {
     icon: Linkedin,
@@ -19,7 +19,7 @@ const REASONS = [
     icon: Users,
     accent: 'var(--orange)',
     title: 'Get endorsed',
-    desc: 'Ask a peer, faculty member, or mentor to endorse a credential and add their word to the evidence.',
+    desc: 'Ask a peer, faculty member, or mentor to endorse a credential.',
   },
   {
     icon: Target,

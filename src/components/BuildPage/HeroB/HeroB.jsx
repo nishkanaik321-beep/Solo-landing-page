@@ -53,7 +53,6 @@ function HeroB() {
               Browse live projects
               <ArrowRight size={15} />
             </a>
-            <a href="#hackathons" className="btn btn-ghost">See hackathons</a>
           </motion.div>
 
           <motion.div className="hero-b__stats" initial="hidden" animate="show" variants={fadeUp(0.32)}>

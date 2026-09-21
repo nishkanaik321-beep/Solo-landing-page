@@ -37,7 +37,7 @@ export default function CourseSection() {
         >
           <Carousel
             items={courses}
-            viewAllLabel="Explore more"
+          
             renderItem={(course, i, isCentered) => (
               <EntryCard
                 org={course.org}

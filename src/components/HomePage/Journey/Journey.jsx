@@ -85,13 +85,29 @@ export default function Journey() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.32, ease: [0.16, 0.8, 0.3, 1] }}
               >
-                <h3>{stage.title}</h3>
-                <p>{stage.desc}</p>
-                <ul>
-                  {stage.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
+                <div className="journey__detail-grid">
+                  <div className="journey__detail-text">
+                    <h3>{stage.title}</h3>
+                    <p>{stage.desc}</p>
+                    <ul>
+                      {stage.items.map((it) => (
+                        <li key={it}>{it}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <figure className="journey__shot">
+                    <div className="journey__shot-bar" aria-hidden="true">
+                      <span /><span /><span />
+                    </div>
+                    <img
+                      className="journey__shot-img"
+                      src={stage.image}
+                      alt={stage.imageAlt}
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>

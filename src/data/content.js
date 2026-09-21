@@ -56,6 +56,8 @@ export const whatIsSoloCards = [
 export const journeyStages = [
   {
     title: 'Sign Up & Import',
+    image: '/images/journey/01-sign-up-import.png',
+    imageAlt: 'SOLO sign up and resume import screen',
     desc: 'Get started via institutional invite or email. Upload an existing resume in PDF/DOCX to let SOLO AI automatically extract skills, education, and past projects into your profile.',
     items: [
       'Accept invite and connect personal email with OTP verification',
@@ -65,6 +67,8 @@ export const journeyStages = [
   },
   {
     title: 'Discover Pathways',
+    image: '/images/journey/02-discover-pathways.png',
+    imageAlt: 'SOLO career pathways discovery screen',
     desc: 'Explore career pathways designed around real industry roles. See in-demand competencies and mapped curriculum paths before you even enroll.',
     items: [
       'Browse role-aligned pathways across Engineering, Design, AI, and Product',
@@ -74,6 +78,8 @@ export const journeyStages = [
   },
   {
     title: 'Learn & Practice',
+    image: '/images/journey/03-learn-practice.png',
+    imageAlt: 'SOLO learning and practice screen',
     desc: 'Follow structured modules across internal SOLO courses and recognized partner platforms such as IBM SkillsBuild.',
     items: [
       'Engage with self-paced lessons, interactive assignments, and quizzes',
@@ -83,6 +89,8 @@ export const journeyStages = [
   },
   {
     title: 'Build & Submit Evidence',
+    image: '/images/journey/04-build-submit-evidence.png',
+    imageAlt: 'SOLO project evidence submission screen',
     desc: 'Transition from theory to practice with real-world challenges, hackathons, and live industry projects organized by partners like SPARK+.',
     items: [
       'Work on live problem statements and deliver demonstrable project code',
@@ -92,6 +100,8 @@ export const journeyStages = [
   },
   {
     title: 'Earn & Endorse',
+    image: '/images/journey/05-earn-endorse.png',
+    imageAlt: 'SOLO credential earning and endorsement screen',
     desc: 'Upon verification, receive cryptographically signed digital badges and Comprehensive Learner Records (CLR) directly in your Credential Wallet.',
     items: [
       'Access verified credentials via the SOLO Mobile App on Google Play',
@@ -101,6 +111,8 @@ export const journeyStages = [
   },
   {
     title: 'Match & Apply',
+    image: '/images/journey/06-match-apply.png',
+    imageAlt: 'SOLO skill matching and job application screen',
     desc: 'Use Skill Match Analysis to compare your verified credentials with real job vacancies and identify any missing gaps.',
     items: [
       'View Matched, Partially Matched, and Missing skills for any job opening',

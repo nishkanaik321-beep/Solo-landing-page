@@ -1,75 +1,32 @@
 import './LiveProjectsB.css'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Layers, BarChart3, Smartphone, ShieldCheck, TrendingUp, Clock, UserCheck } from 'lucide-react'
 import ThemeToggle from '../../shared/ThemeToggle/ThemeToggle.jsx'
 
 const PROJECTS = [
   {
-    title: 'E-commerce Storefront Redesign',
-    org: 'Hilite Technologies',
-    domain: 'Design & Frontend',
-    icon: Layers,
-    accent: 'var(--blue)',
-    duration: '3\u20134 weeks',
-    checkins: '2 mentor check-ins',
-    status: 'Open',
-    tagClass: 'tag--success',
+    title: 'AI Automation',
+    image: '/images/local-screenshots/AI%20Automation.png',
   },
   {
-    title: 'NGO Impact Dashboard',
-    org: 'SPARK+',
-    domain: 'Data & Analytics',
-    icon: BarChart3,
-    accent: 'var(--orange)',
-    duration: '3 weeks',
-    checkins: '2 mentor check-ins',
-    status: 'Open',
-    tagClass: 'tag--success',
+    title: 'AITD Buildathon Challenge',
+    image: '/images/local-screenshots/AITD%20Builadathon%20challenge.png',
   },
   {
-    title: 'Campus Event Booking App',
-    org: 'OPSPL',
-    domain: 'Mobile Development',
-    icon: Smartphone,
-    accent: 'var(--success)',
-    duration: '4 weeks',
-    checkins: '3 mentor check-ins',
-    status: 'Open',
-    tagClass: 'tag--success',
+    title: 'Career Navigator',
+    image: '/images/local-screenshots/Career%20Navigator.png',
   },
   {
-    title: 'Brand Refresh for a D2C Startup',
-    org: 'SPARK+',
-    domain: 'Design & Marketing',
-    icon: TrendingUp,
-    accent: 'var(--gold)',
-    duration: '2 weeks',
-    checkins: '2 mentor check-ins',
-    status: 'Closing soon',
-    tagClass: 'tag--pending',
+    title: 'Public Transit Web App',
+    image: '/images/local-screenshots/Public%20transit%20webapp.png',
   },
   {
-    title: 'Automated QA Test Suite',
-    org: 'OPSPL',
-    domain: 'Quality Assurance',
-    icon: ShieldCheck,
-    accent: 'var(--blue)',
-    duration: '3 weeks',
-    checkins: '2 mentor check-ins',
-    status: 'Open',
-    tagClass: 'tag--success',
+    title: 'Test Web App',
+    image: '/images/local-screenshots/Test%20Web%20App.png',
   },
   {
-    title: 'Social Media Growth Sprint',
-    org: 'ScholarHat',
-    domain: 'Marketing',
-    icon: TrendingUp,
-    accent: 'var(--orange)',
-    duration: '2 weeks',
-    checkins: '1 mentor check-in',
-    status: 'In review',
-    tagClass: 'tag--muted',
+    title: 'Website Redesign',
+    image: '/images/local-screenshots/Website%20Redesign.png',
   },
 ]
 
@@ -130,7 +87,6 @@ function LiveProjectsB() {
 
         <div className="live-projects__grid">
           {PROJECTS.map((project, i) => {
-            const Icon = project.icon
             return (
               <motion.div
                 className="project-card"
@@ -140,35 +96,7 @@ function LiveProjectsB() {
                 viewport={{ once: true, amount: 0.25 }}
                 variants={fadeUp(0.1 + (i % 3) * 0.06)}
               >
-                <div className="project-card__body">
-                  <span className="project-card__icon" style={{ color: project.accent }}>
-                    <Icon size={18} strokeWidth={2} />
-                  </span>
-                  <span className={`tag ${project.tagClass} project-card__status`}>
-                    {project.status}
-                  </span>
-                  <h3 className="project-card__title">{project.title}</h3>
-                  <span className="project-card__org">{project.org} &middot; {project.domain}</span>
-
-                  <div className="project-card__meta">
-                    <span>
-                      <Clock size={13} />
-                      {project.duration}
-                    </span>
-                    <span>
-                      <UserCheck size={13} />
-                      {project.checkins}
-                    </span>
-                  </div>
-                </div>
-                <div className="project-card__footer">
-                  <button
-                    type="button"
-                    className={`btn btn-sm btn-block ${isLight ? 'btn-outline' : 'btn-outline-night'}`}
-                  >
-                    View brief
-                  </button>
-                </div>
+                <img className="project-card__image" src={project.image} alt={project.title} />
               </motion.div>
             )
           })}

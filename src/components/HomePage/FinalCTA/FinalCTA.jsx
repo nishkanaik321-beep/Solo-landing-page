@@ -63,7 +63,12 @@ export default function FinalCTA() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, delay: 0.35, ease: [0.2, 0.0, 0, 1.0] }}
           >
-            <a href="#showcase" className="btn btn-primary">
+            <a
+              href="https://youtu.be/xuh0gChe9No?si=dqNKu6LydOWR7hLO"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary"
+            >
               <Play size={14} fill="currentColor" />
               Watch a Demo
             </a>

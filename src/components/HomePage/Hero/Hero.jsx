@@ -152,7 +152,12 @@ export default function Hero() {
         </motion.p>
 
         <motion.div className="hero__ctas" variants={fadeUp(0.68)} initial="hidden" animate="show">
-          <a href="#showcase" className="btn btn-primary">
+          <a
+            href="https://youtu.be/xuh0gChe9No?si=dqNKu6LydOWR7hLO"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-primary"
+          >
             <Play size={15} fill="currentColor" />
             Watch a Demo
           </a>

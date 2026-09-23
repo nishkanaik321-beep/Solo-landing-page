@@ -137,21 +137,15 @@ function SkillsD() {
           >
             <span className="eyebrow skills__description-eyebrow">SELECTED PATH</span>
             <h4 className="skills__card-title">{activeOption.label}</h4>
-            <p className="skills__card-text">{activeOption.description}</p>
-            <div className="skills__stats" aria-label={`${activeOption.label} availability`}>
-              <div className="skills__stat">
-                <strong>{activeOption.courses}</strong>
-                <span>Courses</span>
-              </div>
-              <div className="skills__stat">
-                <strong>{activeOption.jobs}</strong>
-                <span>Jobs</span>
-              </div>
-              <div className="skills__stat">
-                <strong>{activeOption.internships}</strong>
-                <span>Internships</span>
-              </div>
-            </div>
+
+            <img
+              className="skills__selected-image"
+              src={activeOption.image}
+              alt={activeOption.label}
+            />
+
+            <p className="skills__card-text skills__description-text">{activeOption.description}</p>
+
             <Link to="/signin" className="skills__apply">
               Apply
               <ArrowRight size={15} />

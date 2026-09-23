@@ -39,9 +39,8 @@ function LiveProjectsB() {
   const [isLight, setIsLight] = useState(true)
 
   return (
-    <section
+    <section id="live-projects"
       className={`live-projects ${isLight ? 'live-projects--light' : 'live-projects--dark'}`}
-      id="live-projects"
     >
       <div className="container">
         <div className="live-projects__head-row">

@@ -63,17 +63,17 @@ const Signup = () => {
         <div className="auth-stats">
 
           <div className="hero-stat">
-            <b style={{ color: "#fff" }}>1,200+</b>
+            <b style={{ color: "#fff" }}>100+</b>
             <span>PATHWAYS</span>
           </div>
 
           <div className="hero-stat">
-            <b style={{ color: "#fff" }}>100%</b>
+            <b style={{ color: "#fff" }}>100+</b>
             <span>VERIFIED CREDENTIALS</span>
           </div>
 
           <div className="hero-stat">
-            <b style={{ color: "#fff" }}>85</b>
+            <b style={{ color: "#fff" }}>100+</b>
             <span>CAREER ROLES MAPPED</span>
           </div>
 

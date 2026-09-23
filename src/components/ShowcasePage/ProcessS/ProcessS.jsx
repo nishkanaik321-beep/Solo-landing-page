@@ -77,7 +77,7 @@ function ProcessS() {
             </span>
             <h2>Nothing is issued by hand.</h2>
             <p>
-              Every credential on SOLO \u2014 a badge or a certificate \u2014 comes out of the same
+              Every credential on SOLO a badge or a certificate comes out of the same
               verifiable pipeline: enroll, complete, get assessed, get issued.
             </p>
           </motion.div>

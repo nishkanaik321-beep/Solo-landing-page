@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Target, Flame, UserCheck, Award } from 'lucide-react'
 
 const STATS = [
-  { value: '40+', label: 'Live project briefs' },
-  { value: '12', label: 'Hackathon themes' },
-  { value: '100%', label: 'Mentor-reviewed' },
+  { value: '100+', label: 'Live project briefs' },
+  { value: '100+', label: 'Hackathon themes' },
+  { value: '100+', label: 'Mentor-reviewed' },
 ]
 
 const LIVE_NOW = [

@@ -58,7 +58,7 @@ function SourcesS() {
           viewport={{ once: true, amount: 0.4 }}
           variants={fadeUp(0.06)}
         >
-          Four ways to earn one.
+          Different ways to earn one.
         </motion.h2>
         <motion.p
           className="sources__subtitle"

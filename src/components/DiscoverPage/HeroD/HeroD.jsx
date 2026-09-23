@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, BookOpen, Handshake, Briefcase, Hammer } from 'lucide-react'
 
 const STATS = [
-  { value: '0+', label: 'Verified Courses' },
-  { value: '0+', label: 'Skills tracked' },
-  { value: '0+', label: 'Pathways mapped' },
+  { value: '100+', label: 'Verified Courses' },
+  { value: '100+', label: 'Skills tracked' },
+  { value: '100+', label: 'Pathways mapped' },
 ]
 
 const LIVE_NOW = [

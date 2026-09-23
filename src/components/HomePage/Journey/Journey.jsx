@@ -12,7 +12,7 @@ export default function Journey() {
   const stage = journeyStages[active]
 
   return (
-    <section className={`section journey ${isLight ? 'journey--light' : 'journey--dark'}`}>
+    <section id="journey" className={`section journey ${isLight ? 'journey--light' : 'journey--dark'}`}>
       <div className="container">
         <div className="journey__head-row">
           <motion.div

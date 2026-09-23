@@ -1,5 +1,5 @@
 import './Hero.css'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, Rocket, Sparkles, Diamond, BadgeCheck, Play } from 'lucide-react'
 import { heroStats, heroFloatingCards } from '../../../data/content.js'
@@ -26,29 +26,9 @@ const fadeUp = (delay = 0) => ({
 
 function CountUpStat({ value, label, delay }) {
   const numericMatch = value.match(/[\d,]+/)
-  const target = numericMatch ? parseInt(numericMatch[0].replace(/,/g, ''), 10) : null
   const prefix = numericMatch ? value.slice(0, numericMatch.index) : ''
   const suffix = numericMatch ? value.slice(numericMatch.index + numericMatch[0].length) : ''
-  const [display, setDisplay] = useState(target === null ? value : '0')
-  const started = useRef(false)
-
-  useEffect(() => {
-    if (target === null || started.current) return
-    started.current = true
-    const timeout = setTimeout(() => {
-      const duration = 1100
-      const start = performance.now()
-      const tick = (now) => {
-        const progress = Math.min((now - start) / duration, 1)
-        const eased = 1 - Math.pow(1 - progress, 3)
-        const current = Math.round(target * eased)
-        setDisplay(current.toLocaleString())
-        if (progress < 1) requestAnimationFrame(tick)
-      }
-      requestAnimationFrame(tick)
-    }, delay * 1000)
-    return () => clearTimeout(timeout)
-  }, [target, delay])
+  const display = numericMatch ? numericMatch[0] : value
 
   return (
     <motion.div className="hero__stat" variants={fadeUp(delay)} initial="hidden" animate="show">
@@ -176,7 +156,7 @@ export default function Hero() {
             <Play size={15} fill="currentColor" />
             Watch a Demo
           </a>
-          <a href="#discover-path" className="btn btn-ghost">See how it works</a>
+          <a href="#journey" className="btn btn-ghost">See how it works</a>
         </motion.div>
 
         <div className="hero__stats">

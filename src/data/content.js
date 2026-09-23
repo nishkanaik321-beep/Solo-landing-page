@@ -10,9 +10,9 @@ export const navLinks = [
 ]
 
 export const heroStats = [
-  { value: '1,200+', label: 'Verified pathways' },
-  { value: '100%', label: 'Cryptographic credentials' },
-  { value: '85+', label: 'Career roles mapped' },
+  { value: '100+', label: 'Verified pathways' },
+  { value: '100+', label: 'Cryptographic credentials' },
+  { value: '100+', label: 'Career roles mapped' },
 ]
 
 // Floating decorative cards in the hero

@@ -1,0 +1,233 @@
+.hero-d {
+  position: relative;
+  padding: 156px 0 108px;
+  background: radial-gradient(120% 90% at 12% 0%, var(--peach) 0%, var(--paper) 68%);
+  overflow: hidden;
+}
+
+.hero-d__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-d__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+}
+
+.hero-d__blob--1 {
+  top: -12%;
+  right: 4%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(18, 85, 255, 0.12) 0%, rgba(18, 85, 255, 0) 70%);
+}
+
+.hero-d__blob--2 {
+  bottom: -20%;
+  left: 38%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(253, 67, 34, 0.1) 0%, rgba(253, 67, 34, 0) 70%);
+}
+
+.hero-d__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-d__content {
+  max-width: 560px;
+}
+
+.hero-d__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.2vw, 46px);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 14px 0 20px;
+  color: var(--ink);
+}
+
+.hero-d__title-accent {
+  color: var(--orange);
+}
+
+.hero-d__subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin: 0 0 34px;
+}
+
+.hero-d__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+}
+
+.hero-d__stats {
+  display: flex;
+  gap: 44px;
+  flex-wrap: wrap;
+}
+
+.hero-d__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-d__stat-value {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hero-d__stat-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ===== "Live on SOLO right now" panel ===== */
+.hero-d__panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-pop);
+}
+
+.hero-d__panel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+
+.hero-d__panel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 3px var(--success-bg);
+  flex-shrink: 0;
+}
+
+.hero-d__panel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.hero-d__panel-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-d__panel-row:last-child {
+  border-bottom: none;
+}
+
+.hero-d__panel-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--paper-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-d__panel-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hero-d__panel-value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.hero-d__panel-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--peach);
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: var(--radius-full);
+  transition: background 0.2s ease, color 0.2s ease, gap 0.2s ease;
+}
+
+.hero-d__panel-cta:hover {
+  background: var(--orange);
+  color: #fff;
+  gap: 11px;
+}
+
+@media (max-width: 980px) {
+  .hero-d__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-d__content {
+    max-width: none;
+  }
+
+  .hero-d__panel {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-d {
+    padding: 124px 0 64px;
+  }
+
+  .hero-d__ctas {
+    margin-bottom: 40px;
+  }
+
+  .hero-d__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-d__stats {
+    gap: 28px;
+  }
+}

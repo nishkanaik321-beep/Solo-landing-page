@@ -1,0 +1,222 @@
+/* ==========================================================================
+   SKILLS — supports a dark (default) and light theme, switchable at
+   runtime via the toggle in the section head. Same pattern as Journey on
+   the homepage and Hackathons on Build.
+   ========================================================================== */
+.skills {
+  padding: 96px 0;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.skills--dark {
+  background: var(--night);
+  color: var(--on-night);
+}
+
+.skills--light {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--peach) 100%);
+  color: var(--ink);
+}
+
+.skills__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.skills__head {
+  max-width: 480px;
+}
+
+.skills--light .skills__eyebrow { color: var(--orange); }
+.skills--light .skills__eyebrow::before { background: var(--orange); }
+
+.skills__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 16px 0 0;
+  transition: color 0.4s ease;
+}
+
+.skills--dark .skills__title { color: #fff; }
+.skills--light .skills__title { color: var(--ink); }
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.skills__card {
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.skills--dark .skills__card {
+  background: var(--night-2);
+  border: 1px solid rgba(251, 243, 236, 0.1);
+}
+
+.skills--light .skills__card {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+}
+
+.skills__card--main {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills__card-heading {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  transition: color 0.4s ease;
+}
+
+.skills--dark .skills__card-heading { color: #fff; }
+.skills--light .skills__card-heading { color: var(--ink); }
+
+.skills__card-text {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 420px;
+  transition: color 0.4s ease;
+}
+
+.skills--dark .skills__card-text { color: var(--on-night-soft); }
+.skills--light .skills__card-text { color: var(--ink-soft); }
+
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.skills__tag {
+  border: 1px solid transparent;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 9px 16px;
+  border-radius: var(--radius-full);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.skills--dark .skills__tag {
+  background: rgba(251, 243, 236, 0.08);
+  border-color: rgba(251, 243, 236, 0.14);
+  color: var(--on-night-soft);
+}
+
+.skills--light .skills__tag {
+  background: var(--paper-dim);
+  border-color: var(--line);
+  color: var(--ink-soft);
+}
+
+.skills--dark .skills__tag:hover { border-color: var(--gold); color: #fff; }
+.skills--light .skills__tag:hover { border-color: var(--orange); color: var(--ink); }
+
+.skills__tag--active {
+  background: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
+}
+
+.skills__description {
+  min-height: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills__description-eyebrow {
+  margin-bottom: 18px;
+}
+
+.skills__selected-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+.skills__description-text {
+  max-width: none;
+}
+
+.skills__apply {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  margin-top: 20px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--orange);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.skills__apply:hover {
+  background: var(--orange-dark, #d95a3a);
+  transform: translateY(-2px);
+}
+
+.skills__apply svg {
+  transition: transform 0.2s ease;
+}
+
+.skills__apply:hover svg {
+  transform: translateX(3px);
+}
+
+.skills__card-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  transition: color 0.4s ease;
+}
+
+.skills--dark .skills__card-title { color: #fff; }
+.skills--light .skills__card-title { color: var(--ink); }
+
+@media (max-width: 860px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills {
+    padding: 64px 0;
+  }
+
+  .skills__head-row {
+    flex-direction: column;
+  }
+
+  .skills__card {
+    padding: 22px;
+  }
+}

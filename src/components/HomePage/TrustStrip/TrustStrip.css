@@ -1,0 +1,57 @@
+/* ==========================================================================
+   TRUST STRIP — auto-scrolling marquee
+   ========================================================================== */
+.trust-strip {
+  background: var(--night);
+  padding: 22px 0;
+  overflow: hidden;
+}
+
+.trust-strip__marquee {
+  display: flex;
+  width: max-content;
+  animation: trust-strip-scroll 26s linear infinite;
+}
+
+.trust-strip__marquee:hover {
+  animation-play-state: paused;
+}
+
+.trust-strip__track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 48px;
+  padding-right: 48px;
+}
+
+.trust-strip__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--on-night-soft);
+  white-space: nowrap;
+}
+
+.trust-strip__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--orange);
+}
+
+@keyframes trust-strip-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-strip__marquee {
+    animation: none;
+  }
+}

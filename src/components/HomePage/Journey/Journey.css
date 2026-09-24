@@ -1,0 +1,340 @@
+/* ==========================================================================
+   JOURNEY (6 Stages) — supports a dark (default) and light theme,
+   switchable at runtime via the toggle in the section head.
+   ========================================================================== */
+.journey {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.journey--dark {
+  background: var(--night);
+  color: var(--on-night);
+}
+
+.journey--light {
+  background: var(--peach);
+  color: var(--ink);
+}
+
+.journey__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 52px;
+}
+
+.journey__head {
+  max-width: 620px;
+}
+
+.journey__head h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  margin: 16px 0 16px;
+  transition: color 0.4s ease;
+}
+
+.journey--dark .journey__head h2 { color: #fff; }
+.journey--light .journey__head h2 { color: var(--ink); }
+
+.journey__head p {
+  font-size: 16.5px;
+  line-height: 1.6;
+  transition: color 0.4s ease;
+}
+
+.journey--dark .journey__head p { color: var(--on-night-soft); }
+.journey--light .journey__head p { color: var(--ink-soft); }
+
+.journey--light .journey__eyebrow {
+  color: var(--orange);
+}
+.journey--light .journey__eyebrow::before {
+  background: var(--orange);
+}
+
+/* -------------------- Theme toggle switch -------------------- */
+.journey__theme-toggle {
+  position: relative;
+  flex-shrink: 0;
+  width: 56px;
+  height: 30px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(251, 243, 236, 0.2);
+  background: rgba(251, 243, 236, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.journey--light .journey__theme-toggle {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.journey__theme-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: var(--on-night-soft);
+}
+
+.journey--light .journey__theme-icon { color: var(--ink-faint); }
+
+.journey__theme-knob {
+  position: absolute;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(253, 67, 34, 0.4);
+}
+
+/* -------------------- Stepper track -------------------- */
+.journey__track {
+  position: relative;
+  height: 3px;
+  margin: 0 30px 24px;
+}
+
+.journey__track-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+}
+
+.journey--dark .journey__track-bg { background: rgba(251, 243, 236, 0.14); }
+.journey--light .journey__track-bg {
+  background-image: repeating-linear-gradient(90deg, var(--orange) 0 8px, transparent 8px 14px);
+  opacity: 0.55;
+}
+
+.journey__track-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--orange);
+  border-radius: 4px;
+}
+
+.journey__nodes {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.journey__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 8px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.journey--dark .journey__node:hover { background: rgba(251, 243, 236, 0.08); }
+.journey--light .journey__node:hover { background: rgba(253, 67, 34, 0.05); }
+
+.journey--light .journey__node--active {
+  border-color: var(--orange);
+  background: var(--paper);
+}
+
+.journey__dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s var(--ease-google-emphasized);
+}
+
+.journey--dark .journey__dot {
+  background: var(--night-2);
+  border: 1.5px solid rgba(251, 243, 236, 0.16);
+  color: var(--on-night-soft);
+}
+
+.journey--light .journey__dot {
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  color: var(--ink-soft);
+}
+
+.journey__label {
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: color 0.25s ease;
+  text-align: center;
+}
+
+.journey--dark .journey__label { color: var(--on-night-soft); }
+.journey--light .journey__label { color: var(--ink-soft); }
+
+.journey__node--active .journey__dot {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(253, 67, 34, 0.4);
+}
+
+.journey--dark .journey__node--active .journey__label { color: #fff; }
+.journey--light .journey__node--active .journey__label { color: var(--ink); }
+
+/* -------------------- Detail panel -------------------- */
+.journey__detail {
+  margin-top: 40px;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow-google-2);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.journey--dark .journey__detail {
+  background: var(--night-2);
+  border: 1px solid rgba(251, 243, 236, 0.1);
+}
+
+.journey--light .journey__detail {
+  background: var(--paper);
+  border: 1px solid rgba(253, 67, 34, 0.18);
+}
+
+.journey__detail h3 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.journey--dark .journey__detail h3 { color: #fff; }
+.journey--light .journey__detail h3 { color: var(--ink); }
+
+.journey__detail p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 20px;
+}
+
+.journey--dark .journey__detail p { color: var(--on-night-soft); }
+.journey--light .journey__detail p { color: var(--ink-soft); }
+
+.journey__detail ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.journey__detail li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 14.5px;
+}
+
+.journey--dark .journey__detail li { color: var(--on-night-soft); }
+.journey--light .journey__detail li { color: var(--ink-soft); }
+
+.journey__detail li::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  transform: rotate(45deg) translateY(5px);
+  flex-shrink: 0;
+}
+
+.journey--dark .journey__detail li::before { background: var(--gold); }
+.journey--light .journey__detail li::before { background: var(--orange); }
+
+
+/* -------------------- Detail layout: text + screenshot -------------------- */
+.journey__detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: 36px;
+  align-items: center;
+}
+
+.journey__shot {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-google-3);
+}
+
+.journey--dark .journey__shot {
+  border-color: rgba(251, 243, 236, 0.16);
+}
+
+.journey__shot-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 12px;
+  background: #F1EBE4;
+  border-bottom: 1px solid var(--line);
+}
+
+.journey__shot-bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(23, 19, 15, 0.22);
+}
+
+.journey__shot-bar span:nth-child(1) { background: #FF6058; }
+.journey__shot-bar span:nth-child(2) { background: #FFBD2E; }
+.journey__shot-bar span:nth-child(3) { background: #28C93F; }
+
+.journey__shot-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2.1 / 1;
+  object-fit: contain;
+  background: #fff;
+}
+
+@media (max-width: 1000px) {
+  .journey__detail-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .journey__detail { min-height: 0; }
+}
+
+@media (max-width: 820px) {
+  .journey__nodes { grid-template-columns: repeat(3, 1fr); }
+  .journey__track { display: none; }
+  .journey__detail { padding: 28px 24px; }
+}
+
+@media (max-width: 640px) {
+  .journey__head-row { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .journey__nodes { grid-template-columns: repeat(2, 1fr); }
+  .journey__label { font-size: 12px; }
+}

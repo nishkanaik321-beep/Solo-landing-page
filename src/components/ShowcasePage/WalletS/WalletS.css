@@ -1,0 +1,168 @@
+.wallet-s {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--peach) 100%);
+  padding: 96px 0;
+}
+
+.wallet-s__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 16px 0 14px;
+  max-width: 520px;
+  color: var(--ink);
+}
+
+.wallet-s__subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 64px;
+  max-width: 520px;
+}
+
+.wallet-s__row {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.wallet-s__row:last-child {
+  margin-bottom: 0;
+}
+
+.wallet-s__row--reverse {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.wallet-s__row--reverse .wallet-s__copy {
+  order: 1;
+}
+
+.wallet-s__row--reverse .wallet-s__shot {
+  order: 2;
+}
+
+.wallet-s__shot {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-pop);
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 18px;
+}
+
+.wallet-s__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.wallet-s__shot--card {
+  max-width: 340px;
+  padding: 0;
+}
+
+.wallet-s__shot--card img {
+  border-radius: var(--radius-lg);
+}
+
+.wallet-s__copy h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 22px;
+  color: var(--ink);
+}
+
+.wallet-s__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wallet-s__list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.wallet-s__list-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wallet-s__list h4 {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.wallet-s__list p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 360px;
+}
+
+.wallet-s__note {
+  margin-top: 24px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.wallet-s__note strong {
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .wallet-s__row,
+  .wallet-s__row--reverse {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .wallet-s__row--reverse .wallet-s__copy {
+    order: 2;
+  }
+
+  .wallet-s__row--reverse .wallet-s__shot {
+    order: 1;
+  }
+
+  .wallet-s__shot--card {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wallet-s {
+    padding: 64px 0;
+  }
+
+  .wallet-s__subtitle {
+    margin-bottom: 44px;
+  }
+
+  .wallet-s__row {
+    margin-bottom: 48px;
+  }
+}

@@ -25,6 +25,7 @@ import ProcessS from './components/ShowcasePage/ProcessS/ProcessS.jsx'
 import WalletS from './components/ShowcasePage/WalletS/WalletS.jsx'
 import UsefulnessS from './components/ShowcasePage/UsefulnessS/UsefulnessS.jsx'
 import OpportunitySectionD from './components/DiscoverPage/OpportunitySection/OpportunitySection.jsx'
+import Profile from './components/HomePage/Profile/Profile.jsx'
 
 function LandingPage() {
   return (
@@ -35,6 +36,7 @@ function LandingPage() {
         <TrustStrip />
         <WhatIsSolo />
         <Journey />
+        <Profile />
         <DiscoverPath />
         <CourseSection />
         <ProjectSpotlight />
@@ -52,9 +54,9 @@ function DiscoverPage() {
       <Header />
       <main>
         <HeroD />
+        <OfferingsD />
         <SkillsD />
         <CareerD />
-        <OfferingsD />
         <OpportunitySectionD />
       </main>
       <FinalCTA />

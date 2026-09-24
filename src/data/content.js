@@ -159,7 +159,7 @@ export const courses = [
   {
     id: 'course-1',
     org: 'ScholarHat',
-    logo: '/images/logos/scholarhat.png',
+    logo: '/images/logo/solo-logo.png',
     title: 'Git & GitHub Mastery — Cloud DevOps',
     skills: '9 Skills',
     kind: 'Course',
@@ -172,7 +172,7 @@ export const courses = [
   {
     id: 'course-2',
     org: 'Skill India',
-    logo: '/images/logos/skill-india.png',
+    logo: '/images/logo/solo-logo.png',
     title: 'Problem Solving & Innovation in Tech',
     skills: '4 Skills',
     kind: 'Course',
@@ -185,7 +185,7 @@ export const courses = [
   {
     id: 'course-3',
     org: 'IBM SkillsBuild',
-    logo: '/images/logos/skill-india.png',
+    logo: '/images/logo/solo-logo.png',
     title: 'Digital Skills & Modern Full-Stack',
     skills: '8 Skills',
     kind: 'Course',
@@ -198,7 +198,7 @@ export const courses = [
   {
     id: 'course-4',
     org: 'Sayfol Academy',
-    logo: '/images/logos/sayfol.png',
+    logo: '/images/logo/solo-logo.png',
     title: 'Communicating with Confidence & Leadership',
     skills: '4 Skills',
     kind: 'Course',
@@ -214,18 +214,18 @@ export const opportunities = [
   {
     id: 'opp-1',
     org: 'Kodework',
-    logo: '/images/logos/kodework.png',
+    logo: '/images/logo/solo-logo.png',
     title: 'Motion Graphics Designer',
     skills: '10 Skills',
     kind: 'Job',
     posted: '10 Days Ago',
     cost: 'Full-time',
-    image: '/images/local-screenshots/opp-motion-graphics.png',
+    image: '/images/local-screenshots/opp-visual-designer.png',
   },
   {
     id: 'opp-2',
     org: '9 Digits Media',
-    logo: '/images/logos/9-digits-media.png',
+    logo: '/images/logo/solo-logo.png',
     title: 'Graphic & Visual Designer',
     skills: '11 Skills',
     kind: 'Internship',
@@ -236,7 +236,7 @@ export const opportunities = [
   {
     id: 'opp-3',
     org: 'SPARK+ Technologies',
-    logo: '/images/logos/the-global-voice.png',
+    logo: '/images/logo/solo-logo.png',
     title: 'Junior UX & Interaction Designer',
     skills: '8 Skills',
     kind: 'Job',
@@ -247,7 +247,7 @@ export const opportunities = [
   {
     id: 'opp-4',
     org: 'Northwind Studio',
-    logo: '/images/logos/northwind.png',
+    logo: '/images/logo/solo-logo.png',
     title: 'Brand Designer & Media Intern',
     skills: '5 Skills',
     kind: 'Internship',

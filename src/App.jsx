@@ -7,7 +7,6 @@ import Journey from './components/HomePage/Journey/Journey.jsx'
 import DiscoverPath from './components/HomePage/DiscoverPath/DiscoverPath.jsx'
 import CourseSection from './components/HomePage/CourseSection/CourseSection.jsx'
 import ProjectSpotlight from './components/HomePage/ProjectSpotlight/ProjectSpotlight.jsx'
-import OpportunitySection from './components/HomePage/OpportunitySection/OpportunitySection.jsx'
 import Showcase from './components/HomePage/Showcase/Showcase.jsx'
 import FinalCTA from './components/HomePage/FinalCTA/FinalCTA.jsx'
 import Footer from './components/HomePage/Footer/Footer.jsx'
@@ -25,6 +24,8 @@ import SourcesS from './components/ShowcasePage/SourcesS/SourcesS.jsx'
 import ProcessS from './components/ShowcasePage/ProcessS/ProcessS.jsx'
 import WalletS from './components/ShowcasePage/WalletS/WalletS.jsx'
 import UsefulnessS from './components/ShowcasePage/UsefulnessS/UsefulnessS.jsx'
+import OpportunitySectionD from './components/DiscoverPage/OpportunitySection/OpportunitySection.jsx'
+import Profile from './components/HomePage/Profile/Profile.jsx'
 
 function LandingPage() {
   return (
@@ -35,10 +36,10 @@ function LandingPage() {
         <TrustStrip />
         <WhatIsSolo />
         <Journey />
+        <Profile />
         <DiscoverPath />
         <CourseSection />
         <ProjectSpotlight />
-        <OpportunitySection />
         <Showcase />
         <FinalCTA />
       </main>
@@ -53,9 +54,10 @@ function DiscoverPage() {
       <Header />
       <main>
         <HeroD />
+        <OfferingsD />
         <SkillsD />
         <CareerD />
-         <OfferingsD />
+        <OpportunitySectionD />
       </main>
       <FinalCTA />
       <Footer />

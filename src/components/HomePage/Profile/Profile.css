@@ -1,0 +1,17 @@
+.discover-path__head {
+  max-width: 640px;
+  margin-bottom: 44px;
+}
+
+.discover-path__head h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  margin: 16px 0 14px;
+}
+
+.discover-path__head p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.import-resume { padding-bottom: 96px; }

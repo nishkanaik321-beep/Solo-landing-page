@@ -154,6 +154,7 @@ export default function Hero() {
         <motion.div className="hero__ctas" variants={fadeUp(0.68)} initial="hidden" animate="show">
           <a
             href="https://www.youtube.com/watch?v=yH68Kbx_C5I"
+            href="https://www.youtube.com/watch?v=yH68Kbx_C5I&t=49s"
             target="_blank"
             rel="noreferrer"
             className="btn btn-primary"

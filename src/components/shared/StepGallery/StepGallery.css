@@ -1,0 +1,22 @@
+.gallery{display:grid; grid-template-columns:.95fr 1.05fr; gap:54px; margin-top:8px;}
+@media(max-width:860px){.gallery{grid-template-columns:1fr; gap:0;}}
+.gallery-sticky{position:sticky; top:118px; align-self:start;}
+@media(max-width:860px){.gallery-sticky{display:none;}}
+.gallery-frame{position:relative; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:0 26px 54px -26px rgba(28,21,18,.32); background:#fff; aspect-ratio:760/362;}
+.gimg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; opacity:0; transform:scale(1.04); transition:opacity .5s ease, transform .7s ease;}
+.gimg.on{opacity:1; transform:scale(1);}
+.gallery-cap{position:absolute; left:0; right:0; bottom:0; background:linear-gradient(0deg,rgba(15,10,8,.72),transparent 90%); color:#fff; font-size:12px; line-height:1.5; padding:26px 16px 12px;}
+.gallery-dots{display:flex; gap:6px; margin-top:16px; justify-content:center;}
+.gdot{width:7px; height:7px; border-radius:50%; background:var(--line); transition:.3s;}
+.gdot.on{background:var(--orange); width:22px; border-radius:4px;}
+.gallery-steps{display:flex; flex-direction:column;}
+.gstep{padding:52px 0; border-bottom:1px solid var(--line); opacity:.32; transition:opacity .45s ease; min-height:36vh; display:flex; flex-direction:column; justify-content:center;}
+.gstep:last-child{border-bottom:none;}
+.gstep.on{opacity:1;}
+@media(max-width:860px){.gstep{opacity:1; min-height:auto; padding:0 0 30px;}}
+.gstep-num{width:36px; height:36px; border-radius:50%; background:#fff; border:2px solid var(--line); display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-weight:800; font-size:13px; color:var(--ink-soft); margin-bottom:14px; transition:.4s;}
+.gstep.on .gstep-num{background:linear-gradient(135deg,var(--gold),var(--orange)); border-color:transparent; color:#fff; box-shadow:0 8px 18px -6px rgba(253,67,34,.5);}
+.gstep h4{font-size:17.5px; font-weight:800; margin-bottom:9px; letter-spacing:-.01em;}
+.gstep p{font-size:14.5px; color:var(--ink-soft); line-height:1.65; max-width:430px;}
+.gstep-img{display:none;}
+@media(max-width:860px){.gstep-img{display:block; border-radius:14px; overflow:hidden; margin-bottom:16px; border:1px solid var(--line); box-shadow:0 16px 34px -20px rgba(28,21,18,.3);}}

@@ -64,7 +64,7 @@ export default function FinalCTA() {
             transition={{ duration: 0.6, delay: 0.35, ease: [0.2, 0.0, 0, 1.0] }}
           >
             <a
-              href="https://youtu.be/xuh0gChe9No?si=dqNKu6LydOWR7hLO"
+              href="https://www.youtube.com/watch?v=yH68Kbx_C5I"
               target="_blank"
               rel="noreferrer"
               className="btn btn-primary"

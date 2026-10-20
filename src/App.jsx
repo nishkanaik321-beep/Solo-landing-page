@@ -25,6 +25,7 @@ import ProcessS from './components/ShowcasePage/ProcessS/ProcessS.jsx'
 import WalletS from './components/ShowcasePage/WalletS/WalletS.jsx'
 import UsefulnessS from './components/ShowcasePage/UsefulnessS/UsefulnessS.jsx'
 import OpportunitySectionD from './components/DiscoverPage/OpportunitySection/OpportunitySection.jsx'
+import GenerateResume from './components/BuildPage/GenerateResume/GenerateResume.jsx'
 import Profile from './components/HomePage/Profile/Profile.jsx'
 
 function LandingPage() {
@@ -74,6 +75,7 @@ function BuildPage() {
         <AboutB />
         <LiveProjectsB />
         <ReviewB /> 
+        <GenerateResume />
       </main>
       <FinalCTA />
       <Footer />

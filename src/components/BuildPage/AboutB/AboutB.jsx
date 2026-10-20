@@ -1,16 +1,10 @@
 import './AboutB.css'
 import { motion } from 'framer-motion'
-import { Flame, Target, Users, Gift } from 'lucide-react'
+import { Flame, Target, Users, Gift, ArrowUpRight } from 'lucide-react'
 
 const FORMATS = [
   {
-    title: 'Hackathon',
-    description:
-      'Bring an idea, meet your team, and turn a challenge into something real in a day or a weekend.',
-    icon: Flame,
-    accent: 'var(--orange)',
-  },
-  {
+    number: '01',
     title: 'Live Project',
     description:
       'Work on a real problem for a real context, balancing user needs, constraints, and outcomes.',
@@ -18,16 +12,26 @@ const FORMATS = [
     accent: 'var(--blue)',
   },
   {
+    number: '02',
+    title: 'Hackathon',
+    description:
+      'Bring an idea, meet your team, and turn a challenge into something real in a day or a weekend.',
+    icon: Flame,
+    accent: 'var(--orange)',
+  },
+  {
+    number: '03',
     title: 'Team Build',
     description:
-      'Collaborate across different skills to plan, design, and build something that actually works.',
+      'Combine different skills to plan, design, and build something together that actually works.',
     icon: Users,
     accent: 'var(--success)',
   },
   {
+    number: '04',
     title: 'Build for Free',
     description:
-      'Build a real-world project at no cost, gain hands-on experience, and earn a credential when you complete it.',
+      'Take on a real-world project at no cost, gain hands-on experience, and earn proof when you complete it.',
     icon: Gift,
     accent: 'var(--gold)',
   },
@@ -58,7 +62,7 @@ function AboutB() {
           viewport={{ once: true, amount: 0.4 }}
           variants={fadeUp(0.06)}
         >
-          Build under real constraints.
+          Choose how you want to build.
         </motion.h2>
         <motion.p
           className="sprints__subtitle"
@@ -84,11 +88,17 @@ function AboutB() {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeUp(0.16 + i * 0.07)}
               >
-                <span className="sprint-card__icon" style={{ color: format.accent }}>
-                  <Icon size={20} strokeWidth={2} />
-                </span>
+                <div className="sprint-card__top">
+                  <span className="sprint-card__number">{format.number}</span>
+                  <span className="sprint-card__icon" style={{ color: format.accent }}>
+                    <Icon size={20} strokeWidth={2} />
+                  </span>
+                </div>
                 <h3 className="sprint-card__title">{format.title}</h3>
                 <p className="sprint-card__desc">{format.description}</p>
+                <span className="sprint-card__arrow" aria-hidden="true">
+                  <ArrowUpRight size={16} strokeWidth={2.2} />
+                </span>
               </motion.div>
             )
           })}

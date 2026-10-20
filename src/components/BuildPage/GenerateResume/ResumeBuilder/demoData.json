@@ -1,0 +1,208 @@
+{
+  "userInfo": {
+    "mobile": "+91 98765 43210",
+    "email": "riya.naik@example.com",
+    "designation": "Product & UX Designer",
+    "profileImage": { "md": "" },
+    "userprofile": {
+      "firstname": "Riya",
+      "lastname": "Naik",
+      "city": "Panaji",
+      "state": "Goa",
+      "country": "India",
+      "website": "",
+      "linkedin": "linkedin.com/in/riyanaik",
+      "github": "",
+      "behanceLink": "",
+      "dribbblelink": "",
+      "twitter": "",
+      "instagram": "",
+      "about": "Curious and detail-oriented designer who turns messy problems into simple, usable products. I enjoy working closely with developers and researchers, testing ideas early, and refining them with real user feedback. Always learning new tools and methods to build calmer, more accessible digital experiences."
+    }
+  },
+  "savedResumeDetails": {
+    "socialsData": [
+      { "key": "linkedin", "label": "LinkedIn" },
+      { "key": "github", "label": "GitHub" },
+      { "key": "behanceLink", "label": "Behance" },
+      { "key": "dribbblelink", "label": "Dribbble" }
+    ],
+    "skills": [
+      { "name": "User Research" },
+      { "name": "Wireframing & Prototyping" },
+      { "name": "Design Systems" },
+      { "name": "Interaction Design" },
+      { "name": "Usability Testing" },
+      { "name": "Information Architecture" },
+      { "name": "Accessibility (WCAG)" },
+      { "name": "Figma & FigJam" },
+      { "name": "HTML / CSS Basics" },
+      { "name": "Stakeholder Communication" }
+    ],
+    "educations": [
+      {
+        "id": "edu-1",
+        "relation": {
+          "title": "Bachelor of Design (B.Des.)",
+          "issuerName": "Goa Institute of Design",
+          "description": "Interaction & Communication Design",
+          "startDate": "2017-08-01",
+          "endDate": "2021-06-01",
+          "verified": "verified"
+        }
+      }
+    ],
+    "workexperiences": [
+      {
+        "id": "work-1",
+        "relation": {
+          "title": "Senior UX Designer",
+          "issuerName": "Brightpath Labs",
+          "description": "Led the redesign of a B2B analytics dashboard used by 20,000+ people, cutting task completion time by 35%. Ran monthly usability sessions and partnered with engineering to ship a shared component library.",
+          "startDate": "2023-02-01",
+          "endDate": "2025-08-01",
+          "verified": "verified"
+        }
+      },
+      {
+        "id": "work-2",
+        "relation": {
+          "title": "UI Designer",
+          "issuerName": "Coastal Apps Studio",
+          "description": "Designed mobile and web interfaces for travel and hospitality clients. Built reusable UI kits and handed off annotated specs that reduced design-to-dev revisions.",
+          "startDate": "2021-07-01",
+          "endDate": "2023-01-01",
+          "verified": ""
+        }
+      }
+    ],
+    "enrollinternships": [
+      {
+        "id": "intern-1",
+        "relation": {
+          "title": "Design Intern",
+          "issuerName": "Pixelwave Studio",
+          "description": "Supported the product team with user flows, icon sets and clickable prototypes for an e-commerce app.",
+          "startDate": "2020-05-01",
+          "endDate": "2020-08-01",
+          "verified": ""
+        }
+      }
+    ],
+    "trainings": [
+      {
+        "id": "train-1",
+        "relation": {
+          "title": "Design Thinking Workshop",
+          "issuerName": "Startup Goa",
+          "description": "",
+          "startDate": "2022-03-01",
+          "endDate": "2022-03-01",
+          "verified": ""
+        }
+      }
+    ],
+    "enrollcourses": [
+      {
+        "id": "course-1",
+        "credId": "CRED-20481",
+        "relation": {
+          "title": "Google UX Design Certificate",
+          "issuerName": "Coursera",
+          "description": "",
+          "startDate": "2021-11-01",
+          "endDate": "2022-02-01",
+          "verified": "verified"
+        }
+      },
+      {
+        "id": "course-2",
+        "relation": {
+          "title": "Accessible Web Design",
+          "issuerName": "Interaction Design Foundation",
+          "description": "",
+          "startDate": "2023-09-01",
+          "endDate": "",
+          "verified": ""
+        }
+      }
+    ],
+    "enrollliveprojects": [
+      {
+        "id": "proj-1",
+        "relation": {
+          "title": "FreshCart Grocery App",
+          "issuerName": "UI/UX Design",
+          "description": "Designed an end-to-end grocery ordering flow with a focus on fast reordering.",
+          "startDate": "2024-01-01",
+          "endDate": "2024-04-01",
+          "verified": ""
+        }
+      },
+      {
+        "id": "proj-2",
+        "relation": {
+          "title": "TideTrack Fishing Community Portal",
+          "issuerName": "UI/UX Design",
+          "description": "Created a lightweight portal for local fishers to view tide and weather updates.",
+          "startDate": "2023-06-01",
+          "endDate": "2023-09-01",
+          "verified": ""
+        }
+      },
+      {
+        "id": "proj-3",
+        "relation": {
+          "title": "BookNest Library Kiosk",
+          "issuerName": "UI/UX Design",
+          "description": "",
+          "startDate": "2022-08-01",
+          "endDate": "",
+          "verified": ""
+        }
+      }
+    ],
+    "enrollHackthons": [
+      {
+        "id": "hack-1",
+        "enrollHackathon": {
+          "hackathon": {
+            "hackathonName": "Goa Design Jam 2024",
+            "venue": "Panaji",
+            "category": "Civic Tech",
+            "description": "Prototyped a public transport info app in 24 hours with a team of four.",
+            "award": "Winner – Best User Experience"
+          }
+        },
+        "relation": {
+          "startDate": "2024-10-01",
+          "endDate": ""
+        }
+      }
+    ],
+    "otherCredentials": [
+      {
+        "id": "other-1",
+        "relation": {
+          "title": "Speaker, UX Goa Meetup",
+          "issuerName": "UX Goa Community",
+          "description": "Talk on designing for low-bandwidth users.",
+          "startDate": "2024-02-01",
+          "endDate": "",
+          "verified": ""
+        }
+      },
+      {
+        "id": "other-2",
+        "relation": {
+          "title": "Dean's List, Design School",
+          "issuerName": "Goa Institute of Design",
+          "description": "",
+          "startDate": "2020-06-01",
+          "endDate": "",
+          "verified": ""
+        }
+      }
+    ]
+  }
+}

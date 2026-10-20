@@ -1,6 +1,7 @@
 import './ReviewB.css'
-import { motion } from 'framer-motion'
-import { Award } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Award, Check, ArrowRight, BadgeCheck } from 'lucide-react'
 
 const STEPS = [
   {
@@ -23,12 +24,30 @@ const STEPS = [
   },
 ]
 
+const CHECKLIST = [
+  { label: 'Problem understanding', done: true },
+  { label: 'Technical execution', done: true },
+  { label: 'Documentation', done: false },
+  { label: 'Real-world applicability', done: false },
+]
+
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 18 },
   show: { opacity: 1, y: 0, transition: { delay, duration: 0.55, ease: [0.16, 0.8, 0.3, 1] } },
 })
 
 function ReviewB() {
+  const [approved, setApproved] = useState(false)
+
+  // Gentle, self-contained loop between the two review states —
+  // illustrative, not tied to any live data.
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (mq.matches) return
+    const id = setInterval(() => setApproved((v) => !v), 3400)
+    return () => clearInterval(id)
+  }, [])
+
   return (
     <section className="review-b">
       <div className="container">
@@ -48,7 +67,7 @@ function ReviewB() {
           viewport={{ once: true, amount: 0.4 }}
           variants={fadeUp(0.06)}
         >
-          You never submit into a void.
+          You don&rsquo;t submit into a void.
         </motion.h2>
         <motion.p
           className="review-b__subtitle"
@@ -57,25 +76,82 @@ function ReviewB() {
           viewport={{ once: true, amount: 0.5 }}
           variants={fadeUp(0.12)}
         >
-          Every build gets a real response from a mentor — not just a
-          completion checkmark.
+          Build. Submit. Get feedback. Improve. Submit again — every build
+          gets a real response from a mentor, not just a completion checkmark.
         </motion.p>
 
-        <div className="review-b__steps">
-          {STEPS.map((step, i) => (
-            <motion.div
-              className="step-card"
-              key={step.number}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.4 }}
-              variants={fadeUp(0.18 + i * 0.08)}
-            >
-              <span className="step-card__number">{step.number}</span>
-              <h3 className="step-card__title">{step.title}</h3>
-              <p className="step-card__desc">{step.description}</p>
-            </motion.div>
-          ))}
+        <div className="review-b__body">
+          <div className="review-b__steps">
+            {STEPS.map((step, i) => (
+              <motion.div
+                className="step-card"
+                key={step.number}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.4 }}
+                variants={fadeUp(0.18 + i * 0.08)}
+              >
+                <span className="step-card__number">{step.number}</span>
+                <h3 className="step-card__title">{step.title}</h3>
+                <p className="step-card__desc">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className={`review-b__mock ${approved ? 'review-b__mock--approved' : ''}`}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+            variants={fadeUp(0.3)}
+          >
+            <div className="review-b__mock-head">
+              <span>Project review</span>
+              <span className="review-b__mock-tag">Example</span>
+            </div>
+
+            <ul className="review-b__mock-list">
+              {CHECKLIST.map((item) => (
+                <li key={item.label} className="review-b__mock-item">
+                  <span className="review-b__mock-item-label">{item.label}</span>
+                  <span
+                    className={`review-b__mock-item-status ${
+                      approved || item.done ? 'review-b__mock-item-status--done' : ''
+                    }`}
+                  >
+                    {approved || item.done ? <Check size={14} strokeWidth={2.4} /> : <ArrowRight size={13} strokeWidth={2.2} />}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <AnimatePresence mode="wait">
+              {!approved ? (
+                <motion.div
+                  key="pending"
+                  className="review-b__mock-footer review-b__mock-footer--pending"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Needs another iteration
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="approved"
+                  className="review-b__mock-footer review-b__mock-footer--approved"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <BadgeCheck size={15} strokeWidth={2.2} />
+                  Approved &middot; Credential eligible
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </div>
 
         <motion.div

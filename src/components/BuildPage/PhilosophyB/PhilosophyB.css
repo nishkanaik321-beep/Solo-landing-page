@@ -1,0 +1,136 @@
+.philosophy-b {
+  background: var(--paper);
+  padding: 100px 0 96px;
+}
+
+.philosophy-b__head {
+  max-width: 620px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.philosophy-b__head .eyebrow {
+  display: flex;
+  justify-content: center;
+}
+
+.philosophy-b__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.6vw, 38px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 16px 0 16px;
+  color: var(--ink);
+}
+
+.philosophy-b__title-accent {
+  color: var(--orange);
+}
+
+.philosophy-b__subtitle {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 auto;
+  max-width: 540px;
+}
+
+.philosophy-b__flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.philosophy-b__stage-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.philosophy-b__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.philosophy-b__stage-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+}
+
+.philosophy-b__stage-label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.philosophy-b__connector {
+  flex: 1;
+  height: 1px;
+  min-width: 24px;
+  margin: 0 8px 26px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--line) 0,
+    var(--line) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  transform-origin: left center;
+}
+
+@media (max-width: 860px) {
+  .philosophy-b__flow {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px 0;
+  }
+
+  .philosophy-b__stage-wrap {
+    flex: 0 0 auto;
+    width: 33.33%;
+    justify-content: center;
+  }
+
+  .philosophy-b__connector {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .philosophy-b {
+    padding: 64px 0;
+  }
+
+  .philosophy-b__head {
+    margin-bottom: 44px;
+  }
+
+  .philosophy-b__stage-wrap {
+    width: 50%;
+  }
+
+  .philosophy-b__stage-label {
+    white-space: normal;
+    text-align: center;
+  }
+}

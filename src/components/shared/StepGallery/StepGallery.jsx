@@ -7,25 +7,37 @@ import "./StepGallery.css";
  * the right. Falls back to inline images per-step on narrow screens.
  * `steps`: [{ h, p, img, cap }]
  */
-export default function StepGallery({ steps }) {
+export default function StepGallery({ steps = [] }) {
   const [active, setActive] = useState(0);
   const refs = useRef([]);
+  const currentStep = steps[active] ?? steps[0] ?? null;
 
   useEffect(() => {
+    if (!steps.length || typeof IntersectionObserver === "undefined") {
+      return undefined;
+    }
+
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const i = Number(e.target.dataset.i);
-            setActive(i);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.dataset.i);
+            if (!Number.isNaN(index)) {
+              setActive(index);
+            }
           }
         });
       },
       { threshold: 0.4, rootMargin: "-30% 0px -30% 0px" }
     );
+
     refs.current.forEach((el) => el && io.observe(el));
     return () => io.disconnect();
   }, [steps]);
+
+  if (!steps.length) {
+    return null;
+  }
 
   return (
     <div className="gallery">
@@ -34,7 +46,7 @@ export default function StepGallery({ steps }) {
           {steps.map((s, i) => (
             <img key={i} src={s.img} className={"gimg" + (i === active ? " on" : "")} loading="lazy" alt={s.cap || s.h} />
           ))}
-          <div className="gallery-cap">{steps[active].cap}</div>
+          <div className="gallery-cap">{currentStep?.cap}</div>
         </div>
         <div className="gallery-dots">
           {steps.map((s, i) => (

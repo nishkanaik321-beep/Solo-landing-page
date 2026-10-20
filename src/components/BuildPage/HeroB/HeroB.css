@@ -72,9 +72,28 @@
 
 .hero-b__ctas {
   display: flex;
+  align-items: center;
   gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 52px;
+}
+
+/* Local fallback styling for the secondary CTA, in case the shared
+   .btn-ghost utility isn't defined globally. Safe to remove if it is. */
+.hero-b__ctas .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 12px 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-b__ctas .btn-ghost:hover {
+  border-color: var(--ink);
 }
 
 .hero-b__stats {
@@ -133,6 +152,7 @@
   background: var(--orange);
   box-shadow: 0 0 0 3px var(--peach);
   flex-shrink: 0;
+  animation: hero-b-pulse 2.2s ease-in-out infinite;
 }
 
 .hero-b__panel-list {
@@ -148,6 +168,7 @@
   gap: 12px;
   padding: 10px 4px;
   border-bottom: 1px solid var(--line);
+  transition: opacity 0.3s ease;
 }
 
 .hero-b__panel-row:last-child {
@@ -173,9 +194,34 @@
 }
 
 .hero-b__panel-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--ink-faint);
+}
+
+.hero-b__panel-value--done {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.hero-b__panel-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  animation: hero-b-pulse 1.8s ease-in-out infinite;
+}
+
+.hero-b__panel-row--done .hero-b__panel-icon {
+  background: color-mix(in srgb, var(--gold) 14%, var(--paper-dim));
+}
+
+@keyframes hero-b-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
 }
 
 .hero-b__panel-cta {
@@ -197,6 +243,13 @@
   background: var(--orange);
   color: #fff;
   gap: 11px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-b__panel-dot,
+  .hero-b__panel-live-dot {
+    animation: none;
+  }
 }
 
 @media (max-width: 980px) {

@@ -1,20 +1,9 @@
 import './OpportunitySection.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, CheckCircle2, CircleDashed, XCircle } from 'lucide-react'
-import Carousel from '../../HomePage/Carousel/Carousel.jsx'
-import EntryCard from '../../HomePage/EntryCard/EntryCard.jsx'
-import { opportunities } from '../../../data/content.js'
+import { ArrowUpRight } from 'lucide-react'
 
-const matchFeatures = ['AI Job Matching', 'Multi-Source Search', 'Skills-Based Filter', 'Match Scoring']
-
-// Mirrors the Skill Match Analysis gauge from the SOLO Learner Guide —
-// matched / partially matched / missing skills against a live role.
-const skillMatchRows = [
-  { icon: CheckCircle2, tone: 'match', label: 'Matched skills', detail: 'React, Git, REST APIs', pct: 62 },
-  { icon: CircleDashed, tone: 'partial', label: 'Partially matched', detail: 'Node.js, Testing', pct: 24 },
-  { icon: XCircle, tone: 'missing', label: 'Missing skills', detail: 'GraphQL, CI/CD', pct: 14 },
-]
+const matchFeatures = ['Skill Match Analysis', 'Skills-Based Filter', 'Match Scoring']
 
 export default function OpportunitySection() {
   return (
@@ -40,6 +29,10 @@ export default function OpportunitySection() {
                 <li key={f}>{f}</li>
               ))}
             </ul>
+            <Link to="/build" className="btn btn-primary opportunity-section__cta">
+              Explore Build
+              <ArrowUpRight size={16} />
+            </Link>
             <div className="opportunity-section__visual">
               <img
                 src="/images/local-screenshots/opp-graphic-design.png"
@@ -63,8 +56,6 @@ export default function OpportunitySection() {
               />
             </div>
             <div className="skill-match-card__caption">
-              <strong>62% match</strong>
-              <span>Best-fit role</span>
             </div>
           </motion.div>
         </div>

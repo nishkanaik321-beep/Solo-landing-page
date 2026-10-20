@@ -1,0 +1,458 @@
+/* ==========================================================
+   Resume – "Aurum": sand sidebar, navy type, gold timeline
+   All rules are scoped under .au-page to avoid global leaks.
+   ========================================================== */
+
+.au-page {
+  --au-navy: #0f1f3d;
+  --au-gold: #b98a3a;
+  --au-ink: #1d2b47;
+  --au-sand: #f3f0ea;
+  --au-blush: #f6ede4;
+  --au-edge: #d9cdbf;
+  --au-paper: #faf8f3;
+  --au-dash: #cfcac2;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 1414px; /* A4 proportion at 1000px wide */
+  margin: 0 auto;
+  background: var(--au-paper);
+  color: var(--au-ink);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.au-page *,
+.au-page *::before,
+.au-page *::after {
+  box-sizing: border-box;
+}
+
+/* Resets use :where() so they carry zero specificity and never
+   override the component classes below. */
+:where(.au-page) :where(h1, h2, h3, p, ul, ol) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(.au-page) :where(ul, ol) {
+  list-style: none;
+}
+
+:where(.au-page) a {
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.au-page a:focus-visible {
+  outline: 2px solid var(--au-gold);
+  outline-offset: 2px;
+}
+
+/* ------------------------------ Sidebar ------------------------------ */
+
+.au-side {
+  background: var(--au-sand);
+  border-right: 2px solid var(--au-edge);
+}
+
+.au-photo {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.06 / 1;
+  background: var(--au-blush);
+  border: 2px solid var(--au-edge);
+  border-top: 0;
+  border-left: 0;
+  border-bottom-right-radius: 56px;
+  margin-right: -2px;
+}
+
+.au-ring {
+  width: 57%;
+  aspect-ratio: 1;
+  border: 3px solid var(--au-gold);
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.au-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.au-initials {
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--au-gold);
+}
+
+.au-side-body {
+  padding: 56px 12% 56px 13%;
+}
+
+/* ---------------------------- Section basics ---------------------------- */
+
+.au-section + .au-section {
+  margin-top: 48px;
+}
+
+.au-heading {
+  position: relative;
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: var(--au-navy);
+}
+
+.au-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 2px;
+  background: var(--au-gold);
+}
+
+.au-text {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.au-verified {
+  display: inline-block;
+  vertical-align: -2px;
+  margin-left: 6px;
+  color: var(--au-gold);
+}
+
+.au-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--au-gold);
+  border-bottom: 1px solid currentColor;
+}
+
+.au-link--inline {
+  margin: 0 0 0 10px;
+}
+
+/* ------------------------------- Contact ------------------------------- */
+
+.au-contact {
+  display: grid;
+  gap: 16px;
+}
+
+.au-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.au-contact-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--au-navy);
+  color: #fff;
+}
+
+.au-glyph {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ------------------------------ Education ------------------------------ */
+
+.au-edu + .au-edu {
+  margin-top: 22px;
+}
+
+.au-edu-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--au-navy);
+}
+
+.au-edu-issuer {
+  margin-top: 12px;
+  font-style: italic;
+}
+
+.au-edu-desc {
+  white-space: pre-line;
+  font-size: 13.5px;
+}
+
+.au-edu-dates {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--au-gold);
+}
+
+/* -------------------------------- Skills -------------------------------- */
+
+.au-skills {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* --------------------------------- Main --------------------------------- */
+
+.au-main {
+  padding: 56px 7% 56px 6%;
+  min-width: 0;
+}
+
+.au-topline {
+  height: 2px;
+  margin-bottom: 44px;
+  background: var(--au-gold);
+}
+
+.au-header {
+  padding-left: 0;
+}
+
+.au-name {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: var(--au-navy);
+  overflow-wrap: anywhere;
+}
+
+.au-role {
+  margin-top: 26px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--au-gold);
+}
+
+/* Dividers */
+
+.au-divider {
+  margin: 36px 0;
+  border-top: 2px dashed var(--au-dash);
+}
+
+.au-divider--diamond {
+  position: relative;
+  margin: 40px 0 44px;
+}
+
+.au-diamond {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  background: var(--au-gold);
+  transform: rotate(45deg);
+  border-radius: 2px;
+  outline: 8px solid var(--au-paper);
+}
+
+/* Summary */
+
+.au-summary {
+  max-width: 62ch;
+}
+
+/* ------------------------------- Timeline ------------------------------- */
+
+.au-timeline {
+  position: relative;
+  padding-left: 26px;
+}
+
+.au-timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--au-gold);
+}
+
+.au-tl-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  column-gap: 24px;
+  padding: 0 0 34px;
+  margin-bottom: 34px;
+  border-bottom: 2px dashed var(--au-dash);
+}
+
+.au-tl-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.au-tl-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--au-gold);
+}
+
+.au-tl-date {
+  font-size: 14px;
+  color: var(--au-gold);
+  line-height: 1.5;
+}
+
+.au-tl-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--au-navy);
+}
+
+.au-tl-issuer {
+  margin: 6px 0 12px;
+  font-style: italic;
+}
+
+.au-tl-body .au-text {
+  font-size: 13.5px;
+}
+
+/* ---------------------------------- Lists ---------------------------------- */
+
+.au-list {
+  display: grid;
+  gap: 12px;
+}
+
+.au-list li {
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.au-list--bullet li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.au-list--bullet li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--au-navy);
+}
+
+.au-list-note {
+  display: block;
+  font-size: 13px;
+  color: var(--au-gold);
+}
+
+.au-section {
+  break-inside: avoid;
+}
+
+/* ------------------------------ Responsive ------------------------------ */
+
+@media screen and (max-width: 900px) {
+  .au-name {
+    font-size: 48px;
+  }
+  .au-tl-item {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .au-page {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .au-side {
+    border-right: 0;
+    border-bottom: 2px solid var(--au-edge);
+  }
+  .au-photo {
+    aspect-ratio: auto;
+    padding: 40px 0;
+    border-right: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+  }
+  .au-ring {
+    width: 180px;
+  }
+  .au-side-body,
+  .au-main {
+    padding: 36px 24px;
+  }
+  .au-name {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+  .au-role {
+    font-size: 16px;
+  }
+}
+
+/* --------------------------------- Print --------------------------------- */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  .au-page {
+    max-width: none;
+    min-height: 297mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

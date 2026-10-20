@@ -1,0 +1,4 @@
+.generate-resume { padding-bottom: 96px; }
+.generate-resume__cta { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+.generate-resume__cta .btn { display: inline-flex; align-items: center; gap: 8px; }
+.generate-resume__cta-note { font-size: 13px; opacity: .7; }

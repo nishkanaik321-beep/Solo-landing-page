@@ -1,0 +1,135 @@
+/* Resume builder modal. Self-contained light palette so it reads the same in light/dark site themes. */
+.rb-overlay {
+  --rb-bg: #ffffff;
+  --rb-soft: #f6f4f1;
+  --rb-line: #e4dfd8;
+  --rb-ink: #1c1b1a;
+  --rb-muted: #6b665f;
+  --rb-accent: var(--orange, #f26b21);
+  --rb-accent-soft: var(--peach, #fff0e6);
+
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: stretch; justify-content: center;
+  background: rgba(20, 18, 16, 0.55);
+  backdrop-filter: blur(4px);
+  font-family: var(--font-body, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
+  color: var(--rb-ink);
+}
+.rb-overlay *, .rb-overlay *::before, .rb-overlay *::after { box-sizing: border-box; }
+
+.rb-modal {
+  display: flex; flex-direction: column;
+  width: min(1180px, 100%); height: 100%;
+  background: var(--rb-bg);
+  box-shadow: 0 0 60px rgba(0,0,0,.25);
+}
+@media (min-width: 900px) {
+  .rb-overlay { padding: 20px; }
+  .rb-modal { border-radius: 18px; overflow: hidden; }
+}
+
+/* top bar + stepper */
+.rb-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--rb-line); }
+.rb-steps { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.rb-steps li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--rb-muted); padding: 5px 12px 5px 6px; border-radius: 999px; }
+.rb-steps li span { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--rb-soft); font-size: 11px; font-weight: 700; }
+.rb-steps li.is-active { color: var(--rb-ink); background: var(--rb-accent-soft); font-weight: 600; }
+.rb-steps li.is-active span { background: var(--rb-accent); color: #fff; }
+.rb-steps li.is-done span { background: var(--rb-ink); color: #fff; }
+@media (max-width: 620px) { .rb-steps li { font-size: 0; gap: 0; padding: 4px; } .rb-steps li span { font-size: 11px; } .rb-steps li.is-active { font-size: 13px; gap: 8px; padding: 5px 12px 5px 6px; } }
+
+.rb-body { flex: 1; overflow-y: auto; padding: 28px 24px; background: var(--rb-bg); }
+.rb-head { max-width: 860px; margin: 0 auto 20px; }
+.rb-head h2, .rb-center h2 { margin: 0 0 6px; font-size: clamp(22px, 3vw, 30px); letter-spacing: -0.02em; font-family: var(--font-display, inherit); }
+.rb-sub { margin: 0; color: var(--rb-muted); font-size: 15px; line-height: 1.5; }
+
+.rb-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border-top: 1px solid var(--rb-line); background: var(--rb-bg); }
+.rb-error { flex: 1; text-align: center; color: #b3261e; font-size: 13px; }
+
+/* buttons */
+.rb-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-weight: 600; font-size: 14px; padding: 11px 20px; border-radius: 999px; border: 1.5px solid transparent; cursor: pointer; transition: transform .15s, background .15s, border-color .15s; }
+.rb-btn:hover { transform: translateY(-1px); }
+.rb-btn--primary { background: var(--rb-accent); color: #fff; }
+.rb-btn--primary:hover { filter: brightness(1.06); }
+.rb-btn--ghost { background: transparent; color: var(--rb-ink); border-color: var(--rb-line); }
+.rb-btn--ghost:hover { border-color: var(--rb-ink); }
+.rb-btn--sm { padding: 7px 14px; font-size: 13px; }
+.rb-icon-btn { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 0; background: transparent; color: var(--rb-muted); cursor: pointer; }
+.rb-icon-btn:hover { background: var(--rb-soft); color: var(--rb-ink); }
+
+/* step 1: mode */
+.rb-center { max-width: 820px; margin: 4vh auto 0; text-align: center; }
+.rb-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 32px; text-align: left; }
+@media (max-width: 680px) { .rb-modes { grid-template-columns: 1fr; } }
+.rb-mode { display: flex; flex-direction: column; gap: 8px; padding: 26px; font: inherit; color: inherit; background: var(--rb-bg); border: 1.5px solid var(--rb-line); border-radius: 18px; cursor: pointer; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.rb-mode:hover { border-color: var(--rb-accent); box-shadow: 0 10px 30px rgba(0,0,0,.08); transform: translateY(-3px); }
+.rb-mode svg { color: var(--rb-accent); }
+.rb-mode strong { font-size: 19px; margin-top: 6px; }
+.rb-mode span { color: var(--rb-muted); font-size: 14.5px; line-height: 1.5; }
+.rb-mode em { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-style: normal; font-weight: 600; font-size: 14px; color: var(--rb-accent); }
+.rb-mode--demo { background: var(--rb-accent-soft); border-color: transparent; }
+
+/* step 2: form */
+.rb-form { max-width: 860px; margin: 0 auto; display: grid; gap: 18px; }
+.rb-card { padding: 22px; border: 1px solid var(--rb-line); border-radius: 16px; background: var(--rb-bg); }
+.rb-card h3 { margin: 0 0 14px; font-size: 16px; }
+.rb-card h3 small { margin-left: 8px; font-weight: 500; font-size: 12px; color: var(--rb-muted); }
+.rb-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 640px) { .rb-grid { grid-template-columns: 1fr; } }
+.rb-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.rb-field--wide { grid-column: 1 / -1; }
+.rb-field > span { font-size: 12.5px; font-weight: 600; color: var(--rb-muted); }
+.rb-field input, .rb-field textarea {
+  font: inherit; font-size: 14.5px; color: var(--rb-ink); background: var(--rb-soft);
+  border: 1.5px solid transparent; border-radius: 10px; padding: 10px 12px; width: 100%; resize: vertical;
+}
+.rb-field input:focus, .rb-field textarea:focus { outline: none; border-color: var(--rb-accent); background: var(--rb-bg); }
+.rb-entry { padding: 14px; margin-bottom: 12px; border: 1px dashed var(--rb-line); border-radius: 12px; }
+.rb-entry__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; font-size: 12.5px; font-weight: 700; color: var(--rb-muted); text-transform: uppercase; letter-spacing: .04em; }
+.rb-photo { display: flex; align-items: center; gap: 10px; }
+.rb-photo img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+
+/* step 3: templates */
+.rb-templates { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 820px) { .rb-templates { grid-template-columns: 1fr; max-width: 360px; } }
+.rb-tpl { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 12px; font: inherit; color: inherit; text-align: left; background: var(--rb-soft); border: 2px solid transparent; border-radius: 16px; cursor: pointer; transition: border-color .2s, transform .2s, box-shadow .2s; }
+.rb-tpl:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.1); }
+.rb-tpl.is-selected { border-color: var(--rb-accent); background: var(--rb-accent-soft); }
+.rb-tpl__meta { display: flex; flex-direction: column; gap: 2px; padding: 0 4px 4px; }
+.rb-tpl__meta small { color: var(--rb-muted); font-size: 12.5px; }
+.rb-tpl__check { position: absolute; top: 18px; right: 18px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--rb-accent); color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+.rb-thumb { position: relative; width: 100%; overflow: hidden; border-radius: 8px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.12); pointer-events: none; }
+.rb-thumb__inner { position: absolute; top: 0; left: 0; transform-origin: top left; }
+
+/* step 4: result */
+.rb-result { display: flex; flex-direction: column; margin: -28px -24px; height: calc(100% + 56px); }
+.rb-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 20px; background: var(--rb-accent-soft); border-bottom: 1px solid var(--rb-line); }
+.rb-hint { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--rb-ink); }
+.rb-stage { flex: 1; overflow: auto; padding: 24px; background: #e9e6e1; }
+.rb-paper { max-width: 1000px; margin: 0 auto; outline: none; cursor: text; box-shadow: 0 6px 30px rgba(0,0,0,.18); }
+.rb-paper:focus-within { box-shadow: 0 6px 30px rgba(0,0,0,.18), 0 0 0 3px var(--rb-accent); }
+.rb-paper a { pointer-events: none; }
+@media (max-width: 640px) { .rb-stage { padding: 10px; } }
+
+/* print: show only the resume */
+@media print {
+  body.rb-printing > *:not(.rb-overlay) { display: none !important; }
+  body.rb-printing { overflow: visible !important; background: #fff !important; }
+  body.rb-printing .rb-overlay,
+  body.rb-printing .rb-modal,
+  body.rb-printing .rb-body,
+  body.rb-printing .rb-result,
+  body.rb-printing .rb-stage {
+    position: static !important; display: block !important; height: auto !important;
+    overflow: visible !important; padding: 0 !important; margin: 0 !important;
+    background: none !important; box-shadow: none !important; border: 0 !important; backdrop-filter: none !important;
+  }
+  body.rb-printing .rb-top,
+  body.rb-printing .rb-foot,
+  body.rb-printing .rb-toolbar { display: none !important; }
+  body.rb-printing .rb-paper { max-width: none; box-shadow: none !important; }
+  body.rb-printing .rb-paper a { pointer-events: auto; }
+}
+@media print {
+  body.rb-printing .rb-paper { width: 1000px; }
+}

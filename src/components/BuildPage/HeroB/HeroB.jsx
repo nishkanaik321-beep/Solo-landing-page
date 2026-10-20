@@ -1,7 +1,7 @@
 import './HeroB.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Target, Flame, UserCheck, Award } from 'lucide-react'
+import { ArrowRight, Target, Flame, UserCheck, Award, CheckCircle2 } from 'lucide-react'
 
 const STATS = [
   { value: '100+', label: 'Live project briefs' },
@@ -9,11 +9,13 @@ const STATS = [
   { value: '100+', label: 'Mentor-reviewed' },
 ]
 
-const LIVE_NOW = [
-  { icon: Target, label: 'Live projects', accent: 'var(--blue)' },
-  { icon: Flame, label: 'Hackathons', accent: 'var(--orange)' },
-  { icon: UserCheck, label: 'Mentor reviews', accent: 'var(--success)' },
-  { icon: Award, label: 'Credentials', value: 'Awarded on completion', accent: 'var(--gold)' },
+// Each row now carries a "status" so the board reads like it's actually live —
+// a build moving through the same pipeline the rest of the page explains.
+const BUILD_BOARD = [
+  { icon: Target, label: 'Live project', status: 'In progress', accent: 'var(--blue)' },
+  { icon: UserCheck, label: 'Mentor review', status: 'Feedback ready', accent: 'var(--orange)' },
+  { icon: CheckCircle2, label: 'Evidence submitted', status: 'Under assessment', accent: 'var(--success)' },
+  { icon: Award, label: 'Credential earned', status: 'Verified', accent: 'var(--gold)', done: true },
 ]
 
 const fadeUp = (delay = 0) => ({
@@ -42,15 +44,14 @@ function HeroB() {
           </motion.h1>
 
           <motion.p className="hero-b__subtitle" initial="hidden" animate="show" variants={fadeUp(0.16)}>
-            Reading about a skill and using it under real constraints are two
-            different things. Build turns what you've learned into something
-            you actually shipped — guided and assessed by mentors the whole
-            way through.
+            Turn what you learn into work you can show, explain, and stand
+            behind — through real projects, hackathons, team builds, and
+            challenges, all guided and assessed by mentors along the way.
           </motion.p>
 
           <motion.div className="hero-b__ctas" initial="hidden" animate="show" variants={fadeUp(0.24)}>
             <a href="#live-projects" className="btn btn-primary">
-              Browse live projects
+              Explore live projects
               <ArrowRight size={15} />
             </a>
           </motion.div>
@@ -77,9 +78,9 @@ function HeroB() {
           </div>
 
           <div className="hero-b__panel-list">
-            {LIVE_NOW.map(({ icon: Icon, label, value, accent }, i) => (
+            {BUILD_BOARD.map(({ icon: Icon, label, status, accent, done }, i) => (
               <motion.div
-                className="hero-b__panel-row"
+                className={`hero-b__panel-row ${done ? 'hero-b__panel-row--done' : ''}`}
                 key={label}
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -89,7 +90,10 @@ function HeroB() {
                   <Icon size={17} strokeWidth={2.1} />
                 </span>
                 <span className="hero-b__panel-label">{label}</span>
-                <span className="hero-b__panel-value">{value}</span>
+                <span className={`hero-b__panel-value ${done ? 'hero-b__panel-value--done' : ''}`}>
+                  {!done && <span className="hero-b__panel-live-dot" aria-hidden="true" />}
+                  {status}
+                </span>
               </motion.div>
             ))}
           </div>

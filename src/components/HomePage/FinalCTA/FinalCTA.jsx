@@ -65,7 +65,6 @@ export default function FinalCTA() {
           >
             <a
               href="https://www.youtube.com/watch?v=yH68Kbx_C5I&t=49s"
-              href="https://www.youtube.com/watch?v=yH68Kbx_C5I"
               target="_blank"
               rel="noreferrer"
               className="btn btn-primary"

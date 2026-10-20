@@ -3,11 +3,11 @@ import { motion } from 'framer-motion'
 import StepGallery from '../../shared/StepGallery/StepGallery.jsx'
 
 const IMPORT_STEPS = [
-    { h: 'Select "Update Profile Using Resume"', p: "Right after signup, this option appears in place of the manual form -- pick it to skip retyping everything.", img: "/imagesall/import-resume-popup.jpg", cap: '"Update Profile using Import Resume" option available after signup.' },
-    { h: 'Select "Import from Resume"', p: "On your profile page, click Import from Resume under the Resume & profile panel.", img: "/imagesall/select-import-resume.jpg", cap: "Select Import from Resume." },
-    { h: "Upload your file", p: "Choose a resume file in PDF or DOCX format, then click Upload -- SOLO's AI scans it automatically.", img: "/imagesall/resume-upload-dialog.jpg", cap: "Click Choose File, select your resume, and click Upload." },
-    { h: "Review extracted skills", p: "Skills, education, experience and projects are pulled out and grouped under Acquired Skills for you to check.", img: "/imagesall/skills-extracted.jpg", cap: "Skills, education, and experience extracted automatically and grouped for review." },
-    { h: "Save and finish", p: "Once confirmed, the information saves to your profile -- ready for resume generation and applications.", img: "/imagesall/resume-save-finish.jpg", cap: '"Save and Finish" option to save the updated resume and complete the profile setup.' },
+    { h: 'Select "Update Profile Using Resume"', p: "Right after signup, this option appears in place of the manual form -- pick it to skip retyping everything.", img: "/image/import-resume-popup.jpg", cap: '"Update Profile using Import Resume" option available after signup.' },
+    { h: 'Select "Import from Resume"', p: "On your profile page, click Import from Resume under the Resume & profile panel.", img: "/image/select-import-resume.jpg", cap: "Select Import from Resume." },
+    { h: "Upload your file", p: "Choose a resume file in PDF or DOCX format, then click Upload -- SOLO's AI scans it automatically.", img: "/image/resume-upload-dialog.jpg", cap: "Click Choose File, select your resume, and click Upload." },
+    { h: "Review extracted skills", p: "Skills, education, experience and projects are pulled out and grouped under Acquired Skills for you to check.", img: "/image/skills-extracted.jpg", cap: "Skills, education, and experience extracted automatically and grouped for review." },
+    { h: "Save and finish", p: "Once confirmed, the information saves to your profile -- ready for resume generation and applications.", img: "/image/resume-save-finish.jpg", cap: '"Save and Finish" option to save the updated resume and complete the profile setup.' },
 ];
 
 export default function Profile() {

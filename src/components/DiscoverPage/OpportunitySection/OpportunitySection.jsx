@@ -51,7 +51,7 @@ export default function OpportunitySection() {
             <span className="skill-match-card__eyebrow">Skill Match Analysis</span>
             <div className="skill-match-card__visual" aria-label="Skill match analysis preview">
               <img
-                src="/imagesall/skill-match.jpg"
+                src="/image/skill-match.jpg"
                 alt="Skill match analysis overview"
               />
             </div>

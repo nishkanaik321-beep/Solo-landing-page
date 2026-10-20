@@ -14,25 +14,25 @@ const RESUME_STEPS = [
   {
     h: "Complete your learner profile",
     p: "Update skills, education, projects, work experience and credentials first -- the more complete, the better the resume.",
-    img: "/imagesall/generate-resume-btn.jpg",
+    img: "/image/generate-resume-btn.jpg",
     cap: "Click Generate resume to create a resume using your profile information.",
   },
   {
     h: "Open Generate Resume",
     p: "From My Profile, select the Generate Resume option next to Import from Resume.",
-    img: "/imagesall/generate-resume-btn.jpg",
+    img: "/image/generate-resume-btn.jpg",
     cap: "Click Generate resume to create a resume using your profile information.",
   },
   {
     h: "Choose a template",
     p: "Select or deselect the sections and achievements you want to include, then pick a professionally designed template.",
-    img: "/imagesall/resume-template.jpg",
+    img: "/image/resume-template.jpg",
     cap: "Professionally designed, ATS-ready resume templates with clickable credential links.",
   },
   {
     h: "Preview and download",
     p: "Review exactly how your information appears, then download -- ATS-ready, with clickable links back to each verified credential.",
-    img: "/imagesall/resume-template.jpg",
+    img: "/image/resume-template.jpg",
     cap: "Professionally designed, ATS-ready resume templates with clickable credential links.",
   },
 ];
